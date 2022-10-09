@@ -29,6 +29,9 @@ void PhoneBook::print_phonebook()
 
 void PhoneBook::add_contact()
 {
+	std::cout << "Contact creation - Fill the following informations\n";
+	
+
 
 
 }

@@ -32,6 +32,7 @@ int	main()
 		if (usr_input == "ADD")
 		{
 			std::cout << "add asked\n";
+			my_phonebook.add_contact();
 
 		}
 		else if (usr_input == "SEARCH")
