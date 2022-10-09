@@ -10,6 +10,9 @@ class Contact
 		void print_contact_detailed();
 		void print_contact();
 		int get_id();
+		void fill_by_copy(Contact *contact_from);
+		void fill_by_asking();
+
 
 
 	private:

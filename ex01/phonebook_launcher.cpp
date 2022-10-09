@@ -41,7 +41,7 @@ int	main()
 			my_phonebook.print_phonebook();
 			std::cout << "Please choose an index to print\n";
 			std::getline(std::cin, usr_input);
-			if (usr_input.length() != 1 || usr_input[0] < '0' || usr_input[0] > '9')
+			if (usr_input.length() != 1 || usr_input[0] < '0' || usr_input[0] > '7')
 			{
 				std::cout << "'" << usr_input << "' is not a valid id\n";
 			}

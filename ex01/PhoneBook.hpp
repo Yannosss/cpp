@@ -7,6 +7,7 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void print_phonebook();
+		void translate_contacts();
 		void add_contact();
 		void find_and_print_contact(int id);
 
@@ -14,7 +15,8 @@ class PhoneBook
 
 	private:
 	// champ ne doivent pas etre vides
-		Contact contact_list[10];
+		int phonebook_full;
+		Contact contact_list[8];
 
 };
 
