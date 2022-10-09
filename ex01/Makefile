@@ -1,14 +1,19 @@
 ##########   BASE   ##########
 # File name
-NAME = phonebook
+NAME = phonebook_launcher
 
 # Sources
-SRCS += phonebook.cpp
+SRCS += phonebook_launcher.cpp
+SRCS += PhoneBook.cpp
+SRCS += Contact.cpp
+
 
 OBJS = ${SRCS:.cpp=.o}
 
 
-HEADER += 
+HEADER += phonebook_launcher.h
+HEADER += PhoneBook.hpp
+HEADER += Contact.hpp
 
 INCLUDES_DIR =
 
