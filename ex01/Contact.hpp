@@ -1,6 +1,5 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
-# include "phonebook_launcher.h"
 
 class Contact
 {
@@ -13,10 +12,7 @@ class Contact
 		void fill_by_copy(Contact *contact_from);
 		void fill_by_asking();
 
-
-
 	private:
-		// champ ne doivent pas etre vides
 		int id;
 		std::string first_name;
 		std::string last_name;

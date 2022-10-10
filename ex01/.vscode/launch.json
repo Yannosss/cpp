@@ -7,7 +7,7 @@
 		"type": "cppdbg",
 		"preLaunchTask": "make_cmd",
 		"request": "launch",
-		"program": "${workspaceFolder}/phonebook",
+		"program": "${workspaceFolder}/phonebook_launcher",
 		"args": [],
 		"stopAtEntry": false,
 		"cwd": "${workspaceFolder}",

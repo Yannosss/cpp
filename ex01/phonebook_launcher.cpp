@@ -11,51 +11,43 @@ std::string	ft_truncate(std::string str)
 		return (str);
 }
 
-//void ft_add(PhoneBook *my_phonebook)
-//{
+std::string	ft_getline_not_empty(std::string asked_message)
+{
+	std::string usr_input;
+	std::cout << asked_message;
 
-//}
+	std::getline(std::cin, usr_input);
+	while (usr_input[0] == '\0')
+	{
+		std::cout << "Empty field is not allowed\n";
+		std::cout << asked_message;
+		std::getline(std::cin, usr_input);
+	}
+	return (usr_input);
+}
+
 
 int	main()
 {
 	std::string usr_input;
 	PhoneBook my_phonebook;
-	int id = -1;
-
-	my_phonebook.print_phonebook();
 	
+	std::cout << "###########################################\n";
+	std::cout << "#########    PHONEBOOK PROGRAM    #########\n";
+	std::cout << "###########################################\n";
 	while(1)
 	{
-		//std::cin >> usr_input;
+		std::cout << "Choose a command ADD, SEARCH or EXIT\n";
 		std::getline(std::cin, usr_input);
-		//std::cout << usr_input << '\n';
 		if (usr_input == "ADD")
-		{
-			std::cout << "add asked\n";
 			my_phonebook.add_contact();
-
-		}
 		else if (usr_input == "SEARCH")
-		{
-			std::cout << "search asked\n";
-			my_phonebook.print_phonebook();
-			std::cout << "Please choose an index to print\n";
-			std::getline(std::cin, usr_input);
-			if (usr_input.length() != 1 || usr_input[0] < '0' || usr_input[0] > '7')
-			{
-				std::cout << "'" << usr_input << "' is not a valid id\n";
-			}
-			else
-				my_phonebook.find_and_print_contact(id);
-		}
+			my_phonebook.search();
 		else if (usr_input == "EXIT")
-		{
 			return (0);
-		}
 		else
 			std::cout << "invalid cmd\n";
-
-
+		std::cout << "-------------------------------------------\n";
 	}
 
 

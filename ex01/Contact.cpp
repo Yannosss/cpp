@@ -8,12 +8,11 @@ Contact::Contact()
 	this->nickname = "default_nickname";
 	this->phone_number = "default_phone_number";
 	this->darkest_secret = "default_darkest_secret";
-
 }
 
 void Contact::print_contact_one_line()
 {
-		if (this->id > -10) // TBD
+		if (this->id > -1) // TBD
 		{
 			std::cout << std::right << std::setw(10) << this->id << "|";
 			std::cout << std::right << std::setw(10) << ft_truncate(this->first_name) << "|";
@@ -25,7 +24,7 @@ void Contact::print_contact_one_line()
 
 void Contact::print_contact_detailed()
 {
-		std::cout << "CONTACT "<< this->id << "\n";
+		std::cout << "-------------    CONTACT " << this->id << "    -------------\n";
 		std::cout << "First name     - ";
 		std::cout << std::right << this->first_name << "\n";
 		std::cout << "Last name      - ";
@@ -36,7 +35,6 @@ void Contact::print_contact_detailed()
 		std::cout << std::right << this->phone_number << "\n";
 		std::cout << "darkest secret - ";
 		std::cout << std::right << this->darkest_secret << "\n";
-		std::cout << "\n";
 }
 
 int Contact::get_id()
@@ -55,25 +53,16 @@ void Contact::fill_by_copy(Contact *contact_from)
 		this->darkest_secret = contact_from->darkest_secret;
 		this->id = contact_from->id + 1;
 	}
-
 }
 
 void Contact::fill_by_asking()
 {
-	//std::string usr_input;
 	this->id = 0;
-	std::cout << "Contact creation - Fill the following informations\n";
-	std::cout << "First name     - ";
-	std::getline(std::cin, this->first_name);
-	std::cout << "Last name      - ";
-	std::getline(std::cin, this->last_name);
-	std::cout << "Nickname       - ";
-	std::getline(std::cin, this->nickname);
-	std::cout << "Phone number   - ";
-	std::getline(std::cin, this->phone_number);
-	std::cout << "darkest secret - ";
-	std::getline(std::cin, this->darkest_secret);
-	std::cout << "\n";
-
-	
+	std::cout << "----------   CONTACT CREATION   -----------\n";
+	std::cout << "Fill the following informations\n";
+	this->first_name = ft_getline_not_empty("First name     - ");
+	this->last_name = ft_getline_not_empty("Last name      - ");
+	this->nickname = ft_getline_not_empty("Nickname       - ");
+	this->phone_number = ft_getline_not_empty("Phone number   - ");
+	this->darkest_secret = ft_getline_not_empty("darkest secret - ");
 }
