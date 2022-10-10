@@ -17,11 +17,21 @@ std::string	ft_getline_not_empty(std::string asked_message)
 	std::cout << asked_message;
 
 	std::getline(std::cin, usr_input);
+	if (std::cin.eof()==1)
+		{
+			std::cout << "\nExit asked\n";
+			return(" ");
+		}
 	while (usr_input[0] == '\0')
 	{
 		std::cout << "Empty field is not allowed\n";
 		std::cout << asked_message;
 		std::getline(std::cin, usr_input);
+		if (std::cin.eof()==1)
+		{
+			std::cout << "\nExit asked\n";
+			return(" ");
+		}
 	}
 	return (usr_input);
 }
@@ -39,6 +49,11 @@ int	main()
 	{
 		std::cout << "Choose a command ADD, SEARCH or EXIT\n";
 		std::getline(std::cin, usr_input);
+		if (std::cin.eof()==1)
+		{
+			std::cout << "\n Exit asked\n";
+			return(0);
+		}
 		if (usr_input == "ADD")
 			my_phonebook.add_contact();
 		else if (usr_input == "SEARCH")
@@ -52,6 +67,6 @@ int	main()
 
 
 
-	std::cout << usr_input;
+	//std::cout << usr_input;
 	return (0);
 }

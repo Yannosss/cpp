@@ -8,7 +8,7 @@ PhoneBook::PhoneBook()
 void PhoneBook::print_phonebook()
 {
 		std::cout << "-------------    PHONEBOOK     ------------\n";
-		std::cout << "       id |first name| last name| nickname \n";
+		std::cout << "     index|first name| last name|  nickname\n";
 		for(int i = 1; i <= 8; i++)
 		{
 			this->contact_list[i].print_contact_one_line();
@@ -70,15 +70,24 @@ void PhoneBook::search()
 		std::cout << "Phonebook is empty, add contact before\n";
 		return ;
 	}
-
 	this->print_phonebook();
 	std::cout << "Choose an index to print\n";
 	std::getline(std::cin, usr_input);
+	if (std::cin.eof()==1)
+		{
+			std::cout << "\nExit asked\n";
+			return;
+		}
 	while (!this->id_is_valid(usr_input))
 	{
 		std::cout << "'" << usr_input << "' is not valid\n";
 		std::cout << "Choose an index to print\n";
 		std::getline(std::cin, usr_input);
+		if (std::cin.eof()==1)
+		{
+			std::cout << "\nExit asked\n";
+			return;
+		}
 	}
 	this->find_and_print_contact(int(usr_input[0] - '0'));
 }
