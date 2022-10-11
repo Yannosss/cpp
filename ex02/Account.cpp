@@ -40,9 +40,17 @@
 	}
 	Account::Account( void )
 	{
-
+		//std::cout << "creation " << Account::_nbAccounts << " \n";
+		Account::_displayTimestamp();
+		std::cout << "index:" << Account::_nbAccounts;
+		std::cout << ";amount:0";
+		std::cout << ";created\n";
+		this->_accountIndex = _nbAccounts;
+		this->_amount = 0;
+		this->_nbDeposits = 0;
+		this->_nbWithdrawals = 0;
+		Account::_nbAccounts++;
 	}
-
 
 	int	Account::getNbAccounts( void )
 	{
@@ -50,18 +58,15 @@
 	}
 	int	Account::getTotalAmount( void )
 	{
-		return(0);
-
+		return(Account::_totalAmount);
 	}
 	int	Account::getNbDeposits( void )
 	{
-		return(0);
-
+		return(Account::_totalNbDeposits);
 	}
 	int	Account::getNbWithdrawals( void )
 	{
-		return(0);
-
+		return(Account::_totalNbWithdrawals);
 	}
 	void	Account::displayAccountsInfos( void )
 	{
@@ -137,15 +142,17 @@
 		tm *tps_converted = localtime (&tps);
 
 //[YYYYMMDD_HHMMSS]
-		//std::cout << "time: " << 1900 + tps_converted->tm_year;
+		//std::cout << std::setw(2) << std::setfill('0') << "time: " << 1900 + tps_converted->tm_year;
 		std::cout << "[";
-		std::cout << 1900 + tps_converted->tm_year;
-		std::cout << tps_converted->tm_mon;
-		std::cout << tps_converted->tm_mday;
+		std::cout << std::setw(4) << std::setfill('0') << 1900 + tps_converted->tm_year;
+		std::cout << std::setw(2) << std::setfill('0') << tps_converted->tm_mon;
+		std::cout << std::setw(2) << std::setfill('0') << tps_converted->tm_mday;
 		std::cout << "_";
 		std::cout << std::setw(2) << std::setfill('0') << tps_converted->tm_hour;
 		std::cout << std::setw(2) << std::setfill('0') << tps_converted->tm_min;
 		std::cout << std::setw(2) << std::setfill('0') << tps_converted->tm_sec;
 		std::cout << "] ";
+
+		//std::cout << "[19920104_091532] ";
 
 	}
