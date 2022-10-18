@@ -3,15 +3,15 @@
 NAME = main
 
 # Sources
-SRCS += ...
-
+SRCS += main.cpp
+SRCS += newZombie.cpp
+SRCS += randomChump.cpp
+SRCS += Zombie.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
+HEADER += Zombie.cpp
 
-HEADER += phonebook_launcher.hpp
-HEADER += PhoneBook.hpp
-HEADER += Contact.hpp
 
 INCLUDES_DIR =
 
@@ -19,8 +19,8 @@ LIB_INCLUDE =
 
 # Compilateurs
 CC = c++
-#CFLAGS = -g3 -Wall -Wextra -std=c++98
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g3 -Wall -Wextra -std=c++98
+#CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 
