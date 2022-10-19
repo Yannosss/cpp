@@ -4,14 +4,12 @@ NAME = main
 
 # Sources
 SRCS += main.cpp
-SRCS += newZombie.cpp
-SRCS += randomChump.cpp
 SRCS += Zombie.cpp
+SRCS += zombieHorde.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
 HEADER += Zombie.hpp
-
 
 INCLUDES_DIR =
 
