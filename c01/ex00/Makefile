@@ -32,7 +32,6 @@ $(NAME): $(OBJS) $(HEADER)
 %.o: %.cpp $(HEADER)
 	$(CC) -o $@ -c $< $(CFLAGS) $(INCLUDES_DIR)
 
-# ajouter prise en compte pour compiler avec -j multithread sans risque d'effacer les .o pendant la compilation
 clean:
 	rm -f $(OBJS)
 

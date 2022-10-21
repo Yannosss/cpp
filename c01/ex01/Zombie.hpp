@@ -16,6 +16,6 @@ class Zombie
 		std::string _name;
 };
 
-#endif
-
 Zombie* zombieHorde(int N, std::string name);
+
+#endif
