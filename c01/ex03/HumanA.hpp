@@ -8,27 +8,13 @@ class HumanA
 {
 	public:
 		HumanA(void);
-		HumanA(std::string name, Weapon weapon);
+		HumanA(std::string name, Weapon& weapon);
 		void	attack(void);
 
 	private:
 		std::string	name;
-		Weapon	weapon;
+		Weapon	*weapon;
 
 };
-
-
-
-//HumanA(void)
-//{
-//	std::cout << "test";
-//}
-
-
-//HumanA(std::string weapon)
-//{
-//	std::cout << "test2";
-//}
-
 
 #endif
