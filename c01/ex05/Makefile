@@ -4,11 +4,12 @@ NAME = main
 
 # Sources
 SRCS += main.cpp
+SRCS += Harl.cpp
 
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += 
+HEADER += Harl.hpp
 
 INCLUDES_DIR =
 
@@ -16,8 +17,8 @@ LIB_INCLUDE =
 
 # Compilateurs
 CC = c++
-#CFLAGS = -g3 -Wall -Wextra -std=c++98
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g3 -Wall -Wextra -std=c++98
+#CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 

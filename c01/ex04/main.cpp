@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <iostream>
 #include <fstream>
 
 std::string ft_get_file_in_string(std::ifstream& file)
@@ -35,7 +34,7 @@ void ft_sed(std::string& str, std::string to_search, std::string replaced_by)
 		//std::cout << "DEBUG: work_string:\n'" << str << "'" << std::endl;
 	}
 
-	std::cout << "ts: " << pos << std::endl;
+	//std::cout << "ts: " << pos << std::endl;
 	//std::cout << "str: " << str << std::endl;
 }
 
@@ -63,7 +62,7 @@ int	main(int argc, char **argv)
 		std::cout << "Third parameter <replaced_by> is empty, nothing is done" << std::endl;
 		return 1;
 	}
-	std::cout << "check '" << file_name << "' - '" << s1 << "' - '" << s2 << "'" << std::endl;
+	//std::cout << "check '" << file_name << "' - '" << s1 << "' - '" << s2 << "'" << std::endl;
 
 	// ##### read file #####
 	std::ifstream file_in;
@@ -80,7 +79,7 @@ int	main(int argc, char **argv)
 
 	// ##### replace in file #####
 	ft_sed(work_string, s1, s2);
-	std::cout << "str: " << work_string << std::endl;
+	//std::cout << "str: " << work_string << std::endl;
 
 	// ##### rewrite file #####
 	std::ofstream file_out;
