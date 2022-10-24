@@ -30,12 +30,8 @@ void ft_sed(std::string& str, std::string to_search, std::string replaced_by)
 		str.erase(pos, to_search.length());
 		str.insert(pos, replaced_by);
 		pos = pos + replaced_by.length();
-		//std::cout << "position: " << pos << std::endl;
-		//std::cout << "DEBUG: work_string:\n'" << str << "'" << std::endl;
 	}
 
-	//std::cout << "ts: " << pos << std::endl;
-	//std::cout << "str: " << str << std::endl;
 }
 
 int	main(int argc, char **argv)
@@ -46,23 +42,19 @@ int	main(int argc, char **argv)
 		std::cout << "Error: wrong number of argument, 3 are required <filename> <to_search> <replaced_by>" << std::endl;
 		return 1;
 	}
-
 	std::string file_name = argv[1];
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
-
 	if (s1 == "")
 	{
 		std::cout << "Error: second parameter <to_search> cannot be empty" << std::endl;
 		return 1;
 	}
-
 	if (s2 == "")
 	{
 		std::cout << "Third parameter <replaced_by> is empty, nothing is done" << std::endl;
 		return 1;
 	}
-	//std::cout << "check '" << file_name << "' - '" << s1 << "' - '" << s2 << "'" << std::endl;
 
 	// ##### read file #####
 	std::ifstream file_in;
@@ -75,7 +67,6 @@ int	main(int argc, char **argv)
 	std::string work_string = ft_get_file_in_string(file_in);
 	file_in.close();
 	//std::cout << "DEBUG: work_string: " << work_string << std::endl;
-
 
 	// ##### replace in file #####
 	ft_sed(work_string, s1, s2);
@@ -95,14 +86,3 @@ int	main(int argc, char **argv)
 	return 0;
 }
 
-
-/*
-yoyo
-jee 
-
-suis e
-un teest
-
-clear && make re && ./main file ee ii
-check 'file' - 'ii' - 'iiasdf'
-*/
