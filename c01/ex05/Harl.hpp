@@ -7,6 +7,7 @@
 class Harl
 {
 	public:
+		Harl(void);
 		void complain(std::string level);
 
 	private:
@@ -14,7 +15,7 @@ class Harl
 		void info(void);
 		void warning(void);
 		void error(void);
-
+		void (Harl::*harl_fct_lst[4])(void);
 };
 
 #endif
