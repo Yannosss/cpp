@@ -1,22 +1,21 @@
 #include "Weapon.hpp"
 
 Weapon::Weapon(void):
-	type("wood stick")
-
+	_type("wood stick")
 {
 }
 
 Weapon::Weapon(std::string name):
-	type(name)
+	_type(name)
 {
 }
 
-const std::string&	Weapon::getType()
+const std::string&	Weapon::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void	Weapon::setType(std::string type)
 {
-	this->type = type;
+	this->_type = type;
 }

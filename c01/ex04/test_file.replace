@@ -1,0 +1,16 @@
+cmd a testet 
+clear && make re && ./main test_file deux deux
+clear && make re && ./main test_file "" deux
+clear && make re && ./main test_file deux ""
+
+
+Hola
+je
+
+suis deux
+deux Un deux fichier de test
+
+deux 
+
+trois trois deux 
+

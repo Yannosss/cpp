@@ -10,7 +10,6 @@ Zombie* zombieHorde(int N, std::string name)
 		zombie_tab[i].set_name(name);
 	}
 	return (zombie_tab);
-
 }
 
 

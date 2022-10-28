@@ -1,7 +1,7 @@
 cmd a testet 
-clear && make re && ./main file un deux
-clear && make re && ./main file "" un
-clear && make re && ./main file un ""
+clear && make re && ./main test_file un deux
+clear && make re && ./main test_file "" un
+clear && make re && ./main test_file un ""
 
 
 Hola

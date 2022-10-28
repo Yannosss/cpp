@@ -11,12 +11,9 @@ std::string ft_get_file_in_string(std::ifstream& file)
 	{
 		str = str + buf + "\n";
 	}
-
-	//std::cout << "DEBUG: file_in_string: " << str << std::endl;
 	return (str);
 }
 
-// refaire en creant une methode
 void ft_sed(std::string& str, std::string to_search, std::string replaced_by)
 {
 	int pos;
@@ -66,15 +63,13 @@ int	main(int argc, char **argv)
 	}
 	std::string work_string = ft_get_file_in_string(file_in);
 	file_in.close();
-	//std::cout << "DEBUG: work_string: " << work_string << std::endl;
 
-	// ##### replace in file #####
+	// ##### replace in string #####
 	ft_sed(work_string, s1, s2);
-	//std::cout << "str: " << work_string << std::endl;
 
 	// ##### rewrite file #####
 	std::ofstream file_out;
-	file_out.open(file_name.c_str());
+	file_out.open((file_name + ".replace").c_str());
 	if (!file_out.is_open())
 	{
 		std::cout << "Error: file can't be open" << std::endl;

@@ -2,10 +2,10 @@
 
 Harl::Harl()
 {
-	this->harl_fct_lst[0] = &Harl::debug;
-	this->harl_fct_lst[1] = &Harl::info;
-	this->harl_fct_lst[2] = &Harl::warning;
-	this->harl_fct_lst[3] = &Harl::error;
+	this->_harl_fct_lst[0] = &Harl::_debug;
+	this->_harl_fct_lst[1] = &Harl::_info;
+	this->_harl_fct_lst[2] = &Harl::_warning;
+	this->_harl_fct_lst[3] = &Harl::_error;
 }
 
 void Harl::complain(std::string level)
@@ -15,26 +15,26 @@ void Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == message[i])
-			(this->*harl_fct_lst[i])();
+			(this->*_harl_fct_lst[i])();
 	}
 }
 
-void Harl::debug(void)
+void Harl::_debug(void)
 {
-	std::cout << "debug message from Harl" << std::endl;
+	std::cout << "Harl say debug" << std::endl;
 }
 
-void Harl::info(void)
+void Harl::_info(void)
 {
-	std::cout << "info message from Harl" << std::endl;
+	std::cout << "Harl say info" << std::endl;
 }
 
-void Harl::warning(void)
+void Harl::_warning(void)
 {
-	std::cout << "warning message from Harl" << std::endl;
+	std::cout << "Harl say warning" << std::endl;
 }
 
-void Harl::error(void)
+void Harl::_error(void)
 {
-	std::cout << "error message from Harl" << std::endl;
+	std::cout << "Harl say error" << std::endl;
 }

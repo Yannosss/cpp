@@ -11,11 +11,11 @@ class Harl
 		void complain(std::string level);
 
 	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-		void (Harl::*harl_fct_lst[4])(void);
+		void _debug(void);
+		void _info(void);
+		void _warning(void);
+		void _error(void);
+		void (Harl::*_harl_fct_lst[4])(void);
 };
 
 #endif
