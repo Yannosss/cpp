@@ -47,13 +47,15 @@ int	main(int argc, char **argv)
 		std::cout << "Error: second parameter <to_search> cannot be empty" << std::endl;
 		return 1;
 	}
-	if (s2 == "")
-	{
-		std::cout << "Third parameter <replaced_by> is empty, nothing is done" << std::endl;
-		return 1;
-	}
+	// protection pas forcement utile
+	//if (s2 == "")
+	//{
+	//	std::cout << "Third parameter <replaced_by> is empty, nothing is done" << std::endl;
+	//	return 1;
+	//}
 
 	// ##### read file #####
+	// il manque une protection pour check que c'est pas un dossier
 	std::ifstream file_in;
 	file_in.open(file_name.c_str());
 	if (!file_in.is_open())

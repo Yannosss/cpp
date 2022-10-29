@@ -11,6 +11,7 @@ SRCS += Weapon.cpp
 OBJS = ${SRCS:.cpp=.o}
 
 HEADER += HumanA.hpp
+HEADER += HumanB.hpp
 
 INCLUDES_DIR =
 
