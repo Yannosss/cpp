@@ -14,6 +14,34 @@ Fixed::Fixed(Fixed const & src)
 	*this = src;
 }
 
+// constructeur prenant un float
+Fixed::Fixed(const float nb)
+{
+	int divisor_pow = sizeof(int) * 8 - BIN_POINT_POSITION;
+	int round = sizeof(int) * 8;
+	std::cout << "divisor power: " << divisor_pow << std::endl;
+
+	while (round > 0)
+	{
+		std::cout << "### status ###";
+		std::cout << "--- round: " << round;
+		std::cout << "--- divisor pow: " << divisor_pow;
+		std::cout << "--- nb: " << divisor_pow << std::endl;
+
+		if ()
+
+
+
+		
+
+		divisor_pow--;
+		round--;
+	}
+	
+
+}
+
+
 // destructeur
 Fixed::~Fixed(void)
 {

@@ -13,6 +13,7 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(Fixed const & src);
+		Fixed(const float nb);
 		~Fixed(void);
 
 		Fixed& operator=(Fixed const & src);
