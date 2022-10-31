@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 #define BIN_POINT_POSITION 8
 
@@ -21,6 +22,8 @@ class Fixed
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		int get_binary_point_position(void) const;
+
+		void print_rawbits_binary();
 
 	private:
 		int			_RawBits;

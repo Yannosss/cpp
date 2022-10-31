@@ -2,7 +2,16 @@
 
 int main(void)
 {
-	Fixed nb1(7.5);
+
+	std::cout << "### nb1 ###" << std::endl;
+	Fixed nb1;
+	nb1.setRawBits(-45687);
+	nb1.print_rawbits_binary();
+
+	std::cout << "### nb2 ###" << std::endl;
+	Fixed nb2(7.5);
+	nb2.print_rawbits_binary();
+
 
 	return 0;
 }
