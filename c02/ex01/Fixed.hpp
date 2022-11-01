@@ -14,6 +14,7 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(Fixed const & src);
+		Fixed(const int nb);
 		Fixed(const float nb);
 		~Fixed(void);
 
@@ -22,6 +23,9 @@ class Fixed
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		int get_binary_point_position(void) const;
+
+		float toFloat(void) const;
+		int toInt(void) const;
 
 		void print_rawbits_binary();
 
@@ -33,7 +37,7 @@ class Fixed
 
 };
 
-
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 
 #endif
