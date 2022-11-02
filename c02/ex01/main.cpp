@@ -1,6 +1,52 @@
 #include "Fixed.hpp"
 
+
+// main ex02
 int main(void)
+{
+	Fixed a(6.4f);
+	Fixed b(-50);
+	Fixed const c(42.42f);
+
+
+	
+	std::cout << "operation b > c: " << (b > c) << std::endl;
+	std::cout << "operation b < c: " << (b < c) << std::endl;
+	std::cout << "operation b >= c: " << (b >= c) << std::endl;
+	std::cout << "operation b <= c: " << (b <= c) << std::endl;
+	std::cout << "operation b == c: " << (b == c) << std::endl;
+	std::cout << "operation b != c: " << (b != c) << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "operation b + c: " << (b + c) << std::endl;
+	std::cout << "operation b - c: " << (b - c) << std::endl;
+	std::cout << "operation b * c: " << (b * c) << std::endl;
+	std::cout << "operation b / c: " << (b / c) << std::endl;
+
+	std::cout << "b, b++, b " << b << b++ << b << std::endl;
+	std::cout << "b, b--, b " << b << b-- << b << std::endl;
+	std::cout << "b, ++b, b " << b << ++b << b << std::endl;	
+	std::cout << "b, --b, b " << b << --b << b << std::endl;
+
+	std::cout << "min a b: " << Fixed::min(a, b) << std::endl;
+	std::cout << "min b a: " << Fixed::min(b, a) << std::endl;
+	std::cout << "max a b: " << Fixed::max(a, b) << std::endl;
+	std::cout << "max b a: " << Fixed::max(b, a) << std::endl;
+
+
+
+
+
+
+
+
+
+	return (0);
+}
+
+
+// main ex01
+int main_(void)
 {
 	Fixed a;
 	Fixed const b( 10 );

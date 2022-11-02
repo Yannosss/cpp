@@ -20,6 +20,31 @@ class Fixed
 
 		Fixed& operator=(Fixed const & src);
 
+		// ex02 operateur
+		bool operator>(const Fixed & src) const;
+		bool operator<(const Fixed & src) const;
+		bool operator>=(const Fixed & src) const;
+		bool operator<=(const Fixed & src) const;
+		bool operator==(const Fixed & src) const;
+		bool operator!=(const Fixed & src) const;
+
+		Fixed operator+(const Fixed & src) const;
+		Fixed operator-(const Fixed & src) const;
+		Fixed operator*(const Fixed & src) const;
+		Fixed operator/(const Fixed & src) const;
+
+		Fixed& operator++(int);
+		Fixed operator++();
+		Fixed& operator--(int);
+		Fixed operator--();
+
+		// ex02 fct membre static
+		static Fixed& min(Fixed& a, Fixed& b);
+		static Fixed& max(Fixed& a, Fixed& b);
+
+
+
+
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		int get_binary_point_position(void) const;

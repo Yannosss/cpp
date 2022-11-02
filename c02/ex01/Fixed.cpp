@@ -75,6 +75,119 @@ Fixed& Fixed::operator=(Fixed const & src)
 	return (*this);
 }
 
+// ############################# ex02 #############################
+
+
+bool Fixed::operator>(const Fixed & src) const
+{
+	if (this->getRawBits() > src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<(const Fixed & src) const
+{
+	if (this->getRawBits() < src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator>=(const Fixed & src) const
+{
+	if (this->getRawBits() >= src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<=(const Fixed & src) const
+{
+	if (this->getRawBits() <= src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator==(const Fixed & src) const
+{
+	if (this->getRawBits() == src.getRawBits())
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator!=(const Fixed & src) const
+{
+	if (this->getRawBits() != src.getRawBits())
+		return (true);
+	return (false);
+}
+
+Fixed Fixed::operator+(const Fixed & src) const
+{
+	Fixed result;
+	result.setRawBits((this->getRawBits() + src.getRawBits()));
+	return (result);
+}
+
+Fixed Fixed::operator-(const Fixed & src) const
+{
+	Fixed result;
+	result.setRawBits((this->getRawBits() - src.getRawBits()));
+	return (result);
+}
+
+Fixed Fixed::operator*(const Fixed & src) const
+{
+	Fixed result(this->toFloat() * src.toFloat());
+	return (result);
+}
+
+Fixed Fixed::operator/(const Fixed & src) const
+{
+	Fixed result(this->toFloat() / src.toFloat());
+	return (result);
+}
+
+Fixed& Fixed::operator++(int)
+{
+	this->_RawBits++;
+	return(*this);
+}
+
+Fixed Fixed::operator++()
+{
+	Fixed previous = *this;
+	this->_RawBits++;
+	return(previous);
+}
+		
+Fixed& Fixed::operator--(int)
+{
+	this->_RawBits--;
+	return(*this);
+}
+
+Fixed Fixed::operator--()
+{
+	Fixed previous = *this;
+	this->_RawBits--;
+	return(previous);
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	return (b);
+}
+
+
+// ############################# fin ex02 #############################
 
 int Fixed::getRawBits(void) const
 {
@@ -146,6 +259,7 @@ void Fixed::print_rawbits_binary()
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
 {
-	o<< rhs.toFloat();
+	o << rhs.toFloat();
 	return (o);
 }
+
