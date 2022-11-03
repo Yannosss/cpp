@@ -35,7 +35,7 @@ class Fixed
 
 		Fixed& operator++();
 		Fixed operator++(int);
-		Fixed& operator--(int);
+		Fixed& operator--();
 		Fixed operator--(int);
 
 		// ex02 fct membre static
@@ -52,6 +52,7 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
+		void print_rawbits_binary();
 
 	private:
 		int			_RawBits;

@@ -1,12 +1,29 @@
 #include "Fixed.hpp"
 
+// main correction ex02
+int main( void ) 
+{
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
+}
 
 // main ex02
-int main(void)
+int main__(void)
 {
 	Fixed a(6.4f);
 	Fixed b(-50);
 	Fixed const c(42.42f);
+	Fixed const d(-2);
+
 
 
 	
@@ -33,7 +50,10 @@ int main(void)
 	std::cout << "max a b: " << Fixed::max(a, b) << std::endl;
 	std::cout << "max b a: " << Fixed::max(b, a) << std::endl;
 
-
+	std::cout << "min c d: " << Fixed::min(c, d) << std::endl;
+	std::cout << "min d c: " << Fixed::min(d, c) << std::endl;
+	std::cout << "max c d: " << Fixed::max(c, d) << std::endl;
+	std::cout << "max d c: " << Fixed::max(d, c) << std::endl;
 
 
 
