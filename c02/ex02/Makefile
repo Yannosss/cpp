@@ -10,7 +10,7 @@ SRCS += Fixed.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += Fixed.o
+HEADER += Fixed.hpp
 
 INCLUDES_DIR =
 
@@ -18,8 +18,8 @@ LIB_INCLUDE =
 
 # Compilateurs
 CC = c++
-CFLAGS = -g3 -Wall -Wextra -std=c++98
-#CFLAGS = -Wall -Wextra -Werror -std=c++98
+#CFLAGS = -g3 -Wall -Wextra -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 

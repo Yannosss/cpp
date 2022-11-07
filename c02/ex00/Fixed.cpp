@@ -21,11 +21,10 @@ Fixed::~Fixed(void)
 }
 
 // surcharge d'operateur d'affectation
-Fixed& Fixed::operator=(Fixed & src)
+Fixed& Fixed::operator=(Fixed const & src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_RawBits = src.getRawBits();
-	//this->_binary_point_position = src.get_binary_point_position();
 	return (*this);
 }
 

@@ -9,8 +9,6 @@
 
 class Fixed
 {
-
-
 	public:
 		Fixed(void);
 		Fixed(Fixed const & src);
@@ -41,10 +39,10 @@ class Fixed
 		// ex02 fct membre static
 		static Fixed& min(Fixed& a, Fixed& b);
 		static const Fixed& min(const Fixed& a, const Fixed& b);
-
 		static Fixed& max(Fixed& a, Fixed& b);
 		static const Fixed& max(const Fixed& a, const Fixed& b);
 
+		// ex precedents
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		int get_binary_point_position(void) const;
@@ -52,17 +50,11 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		void print_rawbits_binary();
-
 	private:
 		int			_RawBits;
 		static const int	_binary_point_position = BIN_POINT_POSITION;
-
-
-
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
-
 
 #endif

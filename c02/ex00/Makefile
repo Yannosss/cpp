@@ -6,11 +6,9 @@ NAME = main
 SRCS += main.cpp
 SRCS += Fixed.cpp
 
-
-
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += Fixed.o
+HEADER += Fixed.hpp
 
 INCLUDES_DIR =
 

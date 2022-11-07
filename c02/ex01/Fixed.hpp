@@ -9,8 +9,6 @@
 
 class Fixed
 {
-
-
 	public:
 		Fixed(void);
 		Fixed(Fixed const & src);
@@ -19,31 +17,6 @@ class Fixed
 		~Fixed(void);
 
 		Fixed& operator=(Fixed const & src);
-
-		// ex02 operateur
-		bool operator>(const Fixed & src) const;
-		bool operator<(const Fixed & src) const;
-		bool operator>=(const Fixed & src) const;
-		bool operator<=(const Fixed & src) const;
-		bool operator==(const Fixed & src) const;
-		bool operator!=(const Fixed & src) const;
-
-		Fixed operator+(const Fixed & src) const;
-		Fixed operator-(const Fixed & src) const;
-		Fixed operator*(const Fixed & src) const;
-		Fixed operator/(const Fixed & src) const;
-
-		Fixed& operator++();
-		Fixed operator++(int);
-		Fixed& operator--(int);
-		Fixed operator--(int);
-
-		// ex02 fct membre static
-		static Fixed& min(Fixed& a, Fixed& b);
-		static const Fixed& min(const Fixed& a, const Fixed& b);
-
-		static Fixed& max(Fixed& a, Fixed& b);
-		static const Fixed& max(const Fixed& a, const Fixed& b);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
