@@ -14,13 +14,13 @@ Fixed::Fixed(Fixed const & src)
 Fixed::Fixed(const int nb):
 _RawBits(0)
 {
-	this->_RawBits = round(nb << this->_binary_point_position);
+	this->_RawBits = nb << this->_binary_point_position;
 }
 
 Fixed::Fixed(const float nb):
 _RawBits(0)
 {
-	this->_RawBits = round(nb * (1 << _binary_point_position));
+	this->_RawBits = roundf(nb * (1 << _binary_point_position));
 }
 
 // ##############   Destructeur   ##############

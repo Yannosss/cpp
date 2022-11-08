@@ -19,7 +19,7 @@ Fixed::Fixed(const int nb):
 _RawBits(0)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_RawBits = round(nb << this->_binary_point_position);
+	this->_RawBits = nb << this->_binary_point_position;
 }
 
 // constructeur prenant un float methode bit shifting
@@ -27,7 +27,7 @@ Fixed::Fixed(const float nb):
 _RawBits(0)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_RawBits = round(nb * (1 << _binary_point_position));
+	this->_RawBits = roundf(nb * (1 << _binary_point_position));
 }
 
 // destructeur
