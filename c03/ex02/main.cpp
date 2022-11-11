@@ -15,19 +15,19 @@ int	main(void)
 	std::cout << "\x1B[36m";
 	std::cout << "### test creation without name ###" << std::endl;
 	std::cout << "\x1B[37m";
-	ScavTrap scav1;
-	print_status(scav1);
+	FragTrap frag1;
+	print_status(frag1);
 
 	// test 2
 	std::cout << "\x1B[36m";
 	std::cout << "### test creation with name ###" << std::endl;
 	std::cout << "\x1B[37m";
-	ScavTrap scav2("scav");
-	print_status(scav2);
-	scav2.attack("scav1");
-	scav2.takeDamage(10);
-	scav2.beRepaired(1);
-	print_status(scav2);
+	FragTrap frag2("frag2");
+	print_status(frag2);
+	frag2.attack("frag1");
+	frag2.takeDamage(10);
+	frag2.beRepaired(1);
+	print_status(frag2);
 
 
 }

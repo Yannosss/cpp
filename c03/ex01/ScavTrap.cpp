@@ -10,7 +10,7 @@ ScavTrap::ScavTrap(void)
 	std::cout << "Default Scav constructor called for " << this->_name << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name) 
 {
 	this->_name = name;
 	this->_hit_points = SCAV_INITIAL_HP;
