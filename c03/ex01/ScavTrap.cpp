@@ -30,16 +30,6 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "Scav destructor called for " << this->_name << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& src)
-{
-	std::cout << "Scav copy assignment operator called" << std::endl;
-	this->_name = src._name;
-	this->_hit_points = src._hit_points;
-	this->_energy_points = src._energy_points;
-	this->_attack_damage = src._attack_damage;
-	return (*this);
-}
-
 // Fonctions
 void ScavTrap::attack(const std::string& target)
 {

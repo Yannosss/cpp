@@ -5,12 +5,12 @@ NAME = main
 # Sources
 SRCS += main.cpp
 SRCS += ClapTrap.cpp
-SRCS += ScavTrap.cpp
+SRCS += FragTrap.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
 HEADER += ClapTrap.hpp
-HEADER += ScavTrap.hpp
+HEADER += FragTrap.hpp
 
 INCLUDES_DIR =
 

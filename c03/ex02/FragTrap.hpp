@@ -1,31 +1,32 @@
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
 
 #include "ClapTrap.hpp"
 
-# define SCAV_INITIAL_HP 100
-# define SCAV_INITIAL_ENERGY 50
-# define SCAV_INITIAL_DAMAGE 20
+# define FRAG_INITIAL_HP 100
+# define FRAG_INITIAL_ENERGY 100
+# define FRAG_INITIAL_DAMAGE 30
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
+		FragTrap(void);
+		FragTrap(std::string name);
 
-		ScavTrap(const ScavTrap & src);
-		~ScavTrap(void);
+		FragTrap(const FragTrap & src);
+		~FragTrap(void);
 
-		ScavTrap& operator=(const ScavTrap& src);
+		FragTrap& operator=(const FragTrap& src);
 
 		void attack(const std::string& target);
 
+		void	guardGate(void);
+		void	highFivesGuys(void);
 
 	private:
-		void	guardGate(void);
 
 };
 

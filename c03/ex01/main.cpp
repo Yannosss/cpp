@@ -24,11 +24,23 @@ int	main(void)
 	std::cout << "\x1B[37m";
 	ScavTrap scav2("scav");
 	print_status(scav2);
+	scav2.guardGate();
 	scav2.attack("scav1");
 	scav2.takeDamage(10);
 	scav2.beRepaired(1);
 	print_status(scav2);
 
+	// test 3
+	std::cout << "\x1B[36m";
+	std::cout << "### test operateur = ###" << std::endl;
+	std::cout << "\x1B[37m";
+	ScavTrap scav3;
+	scav3 = scav2;
+	print_status(scav2);
 
+	// fin tests
+	std::cout << "\x1B[36m";
+	std::cout << "### fin des tests ###" << std::endl;
+	std::cout << "\x1B[37m";
 }
 
