@@ -29,6 +29,10 @@ int	main(void)
 	frag2.beRepaired(1);
 	print_status(frag2);
 
+	std::cout << "check niveau attribut " << frag2.ClapTrap::get_hit_points() << std::endl;
+	std::cout << "check niveau attribut " << frag2.FragTrap::get_hit_points() << std::endl;
+
+
 
 }
 
