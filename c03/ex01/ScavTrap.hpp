@@ -15,14 +15,13 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);
-
 		ScavTrap(const ScavTrap & src);
 		~ScavTrap(void);
 
+		ScavTrap& operator=(const ScavTrap& src);
+
 		void	attack(const std::string& target);
 		void	guardGate(void);
-	private:
-
 };
 
 #endif

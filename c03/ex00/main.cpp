@@ -6,7 +6,7 @@ int	main(void)
 {
 	// test 1
 	std::cout << "\x1B[36m";
-	std::cout << "### test mort ###" << std::endl;
+	std::cout << "### test 1 mort ###" << std::endl;
 	std::cout << "\x1B[37m";
 	ClapTrap clap1("clap1");
 	for (int i = 0; i < 3; i++)
@@ -19,7 +19,7 @@ int	main(void)
 
 	// test 2
 	std::cout << "\x1B[36m";
-	std::cout << "### test energie ###" << std::endl;
+	std::cout << "### test 2 energie ###" << std::endl;
 	std::cout << "\x1B[37m";
 	ClapTrap clap2("clap2");
 	for (int i = 0; i < 11; i++)
@@ -33,7 +33,7 @@ int	main(void)
 
 	// test 3
 	std::cout << "\x1B[36m";
-	std::cout << "### test increment HP et energie ###" << std::endl;
+	std::cout << "### test 3 increment HP et energie ###" << std::endl;
 	std::cout << "\x1B[37m";
 	ClapTrap clap3("clap3");
 	std::cout << "HP: " << clap3.get_hit_points() << " - Energy: " << clap3.get_energy_points() << std::endl;
@@ -47,7 +47,7 @@ int	main(void)
 
 	// test 4
 	std::cout << "\x1B[36m";
-	std::cout << "### test constructeur ###" << std::endl;
+	std::cout << "### test 4 constructeur ###" << std::endl;
 	std::cout << "\x1B[37m";
 	ClapTrap clap4("clap4");
 	ClapTrap clap5(clap4);

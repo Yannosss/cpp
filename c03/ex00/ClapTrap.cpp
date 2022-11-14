@@ -35,7 +35,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 	return (*this);
 }
 
-
 // #### fonction membres ####
 int ClapTrap::get_hit_points(void)
 {
@@ -89,5 +88,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	std::cout << "ClapTrap " << this->_name << " get " << amount << " of HP " << std::endl;
 	this->_hit_points += amount;
-	this->_energy_points --;
+	this->_energy_points--;
 }

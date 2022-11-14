@@ -12,7 +12,6 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-	//this->_name = name;
 	this->_hit_points = FRAG_INITIAL_HP;
 	this->_energy_points = FRAG_INITIAL_ENERGY;
 	this->_attack_damage = FRAG_INITIAL_DAMAGE;
@@ -29,29 +28,16 @@ FragTrap::~FragTrap(void)
 	std::cout << "Frag destructor called for " << this->_name << std::endl;
 }
 
-// Fonctions
-//void FragTrap::attack(const std::string& target)
-//{
-//	if (this->_hit_points <= 0)
-//	{
-//		std::cout << "FragTrap " << this->_name << " is dead and cannot attack" << std::endl;
-//		return ;
-//	}
-//	if (this->_energy_points <= 0)
-//	{
-//		std::cout << "FragTrap " << this->_name << " has not enough energy to attack" << std::endl;
-//		return ;
-//	}
-//	std::cout << "FragTrap " << this->_name << " attacks " << target << " causing " 
-//		<< this->_attack_damage << " points of damage!" << std::endl;
-//	this->_energy_points--;
-//}
-
-//void	FragTrap::guardGate(void)
-//{
-//	std::cout << "FragTrap is in mode Gate keeper" << std::endl;
-//}
-
+FragTrap& FragTrap::operator=(const FragTrap& src)
+{
+	std::cout << "Frag copy assignment operator called" << std::endl;
+	this->_name = src._name;
+	this->_hit_points = src._hit_points;
+	this->_energy_points = src._energy_points;
+	
+	this->_attack_damage = src._attack_damage;
+	return (*this);
+}
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "High five ?" << std::endl;

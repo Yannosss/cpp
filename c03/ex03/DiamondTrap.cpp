@@ -2,6 +2,11 @@
 
 DiamondTrap::DiamondTrap(void):ClapTrap(), ScavTrap(), FragTrap()
 {
+	this->DiamondTrap::_name = "no_name";
+	this->ClapTrap::_name = "no_name_clap_name";
+	this->_hit_points = FRAG_INITIAL_HP;
+	this->_energy_points = SCAV_INITIAL_ENERGY;
+	this->_attack_damage = FRAG_INITIAL_DAMAGE;
 	std::cout << "Default Diamond constructor called" << std::endl;
 }
 

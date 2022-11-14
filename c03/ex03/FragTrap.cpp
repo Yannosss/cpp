@@ -12,7 +12,6 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-	//this->_name = name;
 	this->_hit_points = FRAG_INITIAL_HP;
 	this->_energy_points = FRAG_INITIAL_ENERGY;
 	this->_attack_damage = FRAG_INITIAL_DAMAGE;

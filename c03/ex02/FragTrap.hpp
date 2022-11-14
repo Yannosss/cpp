@@ -15,17 +15,12 @@ class FragTrap : public ClapTrap
 	public:
 		FragTrap(void);
 		FragTrap(std::string name);
-
 		FragTrap(const FragTrap & src);
 		~FragTrap(void);
 
-		//void attack(const std::string& target);
+		FragTrap& operator=(const FragTrap& src);
 
-		//void	guardGate(void);
 		void	highFivesGuys(void);
-
-	private:
-
 };
 
 #endif

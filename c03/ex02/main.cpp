@@ -13,26 +13,19 @@ int	main(void)
 {
 	// test 1
 	std::cout << "\x1B[36m";
-	std::cout << "### test creation without name ###" << std::endl;
+	std::cout << "### test 1 creation without name ###" << std::endl;
 	std::cout << "\x1B[37m";
 	FragTrap frag1;
 	print_status(frag1);
 
 	// test 2
 	std::cout << "\x1B[36m";
-	std::cout << "### test creation with name ###" << std::endl;
+	std::cout << "### test 2 creation with name ###" << std::endl;
 	std::cout << "\x1B[37m";
 	FragTrap frag2("frag2");
 	print_status(frag2);
 	frag2.attack("frag1");
-	frag2.takeDamage(10);
-	frag2.beRepaired(1);
-	print_status(frag2);
-
-	std::cout << "check niveau attribut " << frag2.ClapTrap::get_hit_points() << std::endl;
-	std::cout << "check niveau attribut " << frag2.FragTrap::get_hit_points() << std::endl;
-
-
+	frag2.highFivesGuys();
 
 }
 

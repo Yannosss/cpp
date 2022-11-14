@@ -5,8 +5,6 @@ ClapTrap::ClapTrap(void):
 _name("no_name"), _hit_points(CLAP_INITIAL_HP), _energy_points(CLAP_INITIAL_ENERGY), _attack_damage(CLAP_INITIAL_DAMAGE)
 {
 	std::cout << "Default Clap constructor called for " << this->_name << std::endl;
-	std::cout << "check damage depuis clap" <<this->_attack_damage  << std::endl;
-
 }
 
 ClapTrap::ClapTrap(std::string name):
@@ -36,7 +34,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src)
 	this->_attack_damage = src._attack_damage;
 	return (*this);
 }
-
 
 // #### fonction membres ####
 std::string ClapTrap::get_name(void)
@@ -101,5 +98,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	std::cout << "ClapTrap " << this->_name << " get " << amount << " of HP " << std::endl;
 	this->_hit_points += amount;
-	this->_energy_points --;
+	this->_energy_points--;
 }
