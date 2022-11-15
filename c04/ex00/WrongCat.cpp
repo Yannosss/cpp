@@ -3,22 +3,24 @@
 // Constructeur / destructeurs
 WrongCat::WrongCat(void)
 {
+	std::cout << "Constructor Default WrongCat called"<< std::endl;
 	this->type = "WrongCat";
-	std::cout << "Defaut constructor Cat called" << std::endl;
-
 }
 
 WrongCat::WrongCat(const WrongCat& src)
 {
+	std::cout << "Constructor Bycopy WrongCat called" << std::endl;
 	*this = src;
 }
 
 WrongCat::~WrongCat(void)
 {
+	std::cout << "Destructor WrongCat" << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& src)
 {
+	std::cout << "Operator= WrongCat called" << std::endl;
 	this->type = src.type;
 	return (*this);
 }
