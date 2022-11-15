@@ -4,7 +4,7 @@
 WrongAnimal::WrongAnimal(void)
 {
 	std::cout << "Constructor Default WrongAnimal called"<< std::endl;
-	this->type = "WrongAnimal";
+	this->_type = "WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& src)
@@ -21,14 +21,14 @@ WrongAnimal::~WrongAnimal(void)
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src)
 {
 	std::cout << "Operator= WrongAnimal called" << std::endl;
-	this->type = src.type;
+	this->_type = src._type;
 	return (*this);
 }
 
 // fonctions membres
 std::string WrongAnimal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void WrongAnimal::makeSound(void) const

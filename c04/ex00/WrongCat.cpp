@@ -4,10 +4,10 @@
 WrongCat::WrongCat(void)
 {
 	std::cout << "Constructor Default WrongCat called"<< std::endl;
-	this->type = "WrongCat";
+	this->_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& src)
+WrongCat::WrongCat(const WrongCat& src): WrongAnimal(src)
 {
 	std::cout << "Constructor Bycopy WrongCat called" << std::endl;
 	*this = src;
@@ -21,7 +21,7 @@ WrongCat::~WrongCat(void)
 WrongCat& WrongCat::operator=(const WrongCat& src)
 {
 	std::cout << "Operator= WrongCat called" << std::endl;
-	this->type = src.type;
+	this->_type = src._type;
 	return (*this);
 }
 
