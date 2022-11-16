@@ -8,10 +8,10 @@ class Dog: public Animal
 	public:
 		Dog(void);
 		Dog(const Dog& src);
-		virtual ~Dog(void);
+		~Dog(void);
 		Dog& operator=(const Dog& src);
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 
 };
 
