@@ -9,9 +9,10 @@ Bureaucrat::Bureaucrat(void)
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
 	if (grade < 1)
-		throw GradeTooLowException();
-	if (grade > 150)
 		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+	this->_grade = grade;
 	this->_name = name;
 }
 
@@ -35,6 +36,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 	return (*this);
 }
 
+// Surcharge operateur <<
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs)
+{
+	o << rhs.getName() << ", Bureaucrat grade " << rhs.getGrade();
+	return (o);
+}
+
 // Fonctions
 std::string Bureaucrat::getName(void) const
 {
@@ -48,14 +56,14 @@ int Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::increment_grade(void)
 {
-	if (this->_grade > 149)
+	if (this->_grade < 2)
 		throw GradeTooHighException();
-	this->_grade++;
+	this->_grade--;
 }
 
 void	Bureaucrat::decrement_grade(void)
 {
-	if (this->_grade < 2)
-		throw GradeTooHighException();
+	if (this->_grade > 149)
+		throw GradeTooLowException();
 	this->_grade++;
 }

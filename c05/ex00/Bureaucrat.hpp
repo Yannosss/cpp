@@ -10,16 +10,30 @@ class Bureaucrat
 		Bureaucrat(std::string name, int grade);
 
 		Bureaucrat(const Bureaucrat& src);
-		virtual ~Bureaucrat(void);
+		~Bureaucrat(void);
 		Bureaucrat& operator=(const Bureaucrat& src);
 
-		std::string getName(void) const;
-		int getGrade(void) const;
-		void	increment_grade(void);
-		void	decrement_grade(void);
+		std::string	getName(void) const;
+		int			getGrade(void) const;
+		void		increment_grade(void);
+		void		decrement_grade(void);
 	
-		class GradeTooHighException{};
-		class GradeTooLowException{};
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("Grade is too high");
+				}
+		};
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("Grade is too low");
+				}
+		};
 
 	protected:
 		std::string	_name;
@@ -27,7 +41,8 @@ class Bureaucrat
 
 	private:
 		Bureaucrat(void);
-
 };
+
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs);
 
 #endif
