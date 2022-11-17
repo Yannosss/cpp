@@ -4,18 +4,12 @@ NAME = main
 
 # Sources
 SRCS += main.cpp
-SRCS += Animal.cpp
-SRCS += Cat.cpp
-SRCS += Dog.cpp
-SRCS += Brain.cpp
+SRCS += Bureaucrat.cpp
 
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += Animal.hpp
-HEADER += Cat.hpp
-HEADER += Dog.hpp
-HEADER += Brain.hpp
+HEADER += Bureaucrat.hpp
 
 INCLUDES_DIR =
 
@@ -23,8 +17,8 @@ LIB_INCLUDE =
 
 # Compilateurs
 CC = c++
-#CFLAGS = -g3 -Wall -Wextra -std=c++98
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g3 -Wall -Wextra -std=c++98
+#CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 
