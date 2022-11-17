@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <exception>
 
 class Bureaucrat
 {
@@ -35,11 +36,9 @@ class Bureaucrat
 				}
 		};
 
-	protected:
-		std::string	_name;
-		int			_grade;
-
 	private:
+		const std::string	_name;
+		int			_grade;
 		Bureaucrat(void);
 };
 
