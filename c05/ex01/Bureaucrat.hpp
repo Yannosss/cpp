@@ -5,6 +5,8 @@
 # include <string>
 # include <exception>
 
+# include "Form.hpp"
+
 class Bureaucrat
 {
 	public:
@@ -18,6 +20,7 @@ class Bureaucrat
 		int			getGrade(void) const;
 		void		increment_grade(void);
 		void		decrement_grade(void);
+		void		signForm(Form& formular);
 	
 		class GradeTooHighException: public std::exception
 		{
