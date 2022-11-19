@@ -14,7 +14,7 @@ _min_grade_to_exec(min_grade_to_exec)
 {
 	if (_min_grade_to_sign < 1 || _min_grade_to_exec < 1)
 		throw GradeTooHighException();
-	if (_min_grade_to_sign > 150 || _min_grade_to_sign > 150)
+	if (_min_grade_to_sign > 150 || _min_grade_to_exec > 150)
 		throw GradeTooLowException();
 }
 
@@ -67,7 +67,7 @@ int Form::get_min_grade_to_exec(void) const
 }
 
 // fonctions
-void	Form::beSigned(Bureaucrat bureaucrat)
+void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_min_grade_to_sign)
 		throw GradeTooLowException();

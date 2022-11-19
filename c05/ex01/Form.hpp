@@ -7,6 +7,7 @@
 
 # include "Bureaucrat.hpp"
 
+class Bureaucrat; 
 
 class Form
 {
@@ -21,7 +22,7 @@ class Form
 		int			get_min_grade_to_sign(void) const;
 		int			get_min_grade_to_exec(void) const;
 
-		void	beSigned(Bureaucrat bureaucrat);
+		void	beSigned(Bureaucrat& bureaucrat);
 
 		class GradeTooHighException: public std::exception
 		{
