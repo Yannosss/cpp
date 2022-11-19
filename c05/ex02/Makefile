@@ -7,14 +7,17 @@ SRCS += main.cpp
 SRCS += Bureaucrat.cpp
 SRCS += AForm.cpp
 SRCS += ShrubberyCreationForm.cpp
-
-
+SRCS += RobotomyRequestForm.cpp
+SRCS += PresidentialPardonForm.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
 HEADER += Bureaucrat.hpp
 HEADER += AForm.hpp
 HEADER += ShrubberyCreationForm.hpp
+HEADER += RobotomyRequestForm.hpp
+HEADER += PresidentialPardonForm.hpp
+
 
 INCLUDES_DIR =
 

@@ -23,10 +23,13 @@ class AForm
 		int				get_min_grade_to_sign(void) const;
 		int				get_min_grade_to_exec(void) const;
 		std::string		get_target(void) const;
+		void			set_form_signed(bool new_state);
 
-		virtual void	execute(Bureaucrat const & executor) = 0;
 
 		void	beSigned(Bureaucrat& bureaucrat);
+		virtual void	execute(Bureaucrat const & executor) const;
+		virtual void	execute_childform() const = 0;
+
 
 		class GradeTooHighException: public std::exception
 		{
@@ -44,13 +47,21 @@ class AForm
 					return ("Grade is too low");
 				}
 		};
+		class FormNotSignedException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("Formular is not signed");
+				}
+		};
 
 	private:
 		const std::string	_name;
 		bool				_form_signed;
 		const int			_min_grade_to_sign;
 		const int			_min_grade_to_exec;
-		std::string			_target;
+		const std::string	_target;
 
 };
 

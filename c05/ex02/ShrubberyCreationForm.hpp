@@ -4,28 +4,25 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include <fstream>
 
 # include "AForm.hpp"
 
-//class Form; 
-
+# define SHRUB_MIN_GRADE_TO_SIGN 145
+# define SHRUB_MIN_GRADE_TO_EXEC 137 
 
 class ShrubberyCreationForm: public AForm
 {
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string name, int min_grade_to_sign, int min_grade_to_exec, std::string target);
+		ShrubberyCreationForm(std::string name,std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& src);
 		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& src);
 
-		void		exec_form(void);
+		virtual void	execute_childform() const;
 
 	private:
-
-
+		ShrubberyCreationForm(void);
 };
-
-
 
 #endif

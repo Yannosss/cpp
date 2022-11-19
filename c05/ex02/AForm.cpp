@@ -49,7 +49,7 @@ std::ostream& operator<<(std::ostream& o, const AForm& rhs)
 	return (o);
 }
 
-// get
+// get / set
 std::string AForm::get_name(void) const
 {
 	return (this->_name);
@@ -71,10 +71,26 @@ std::string AForm::get_target(void) const
 	return (this->_target);
 }
 
+void AForm::set_form_signed(bool new_state)
+{
+	this->_form_signed = new_state;
+}
+
+
 // fonctions
 void	AForm::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_min_grade_to_sign)
 		throw GradeTooLowException();
 	this->_form_signed = true;
+}
+
+// Fonctions
+void	AForm::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->_min_grade_to_sign)
+		throw GradeTooLowException();
+	if (!get_form_signed())
+		throw FormNotSignedException();
+	this->execute_childform();
 }

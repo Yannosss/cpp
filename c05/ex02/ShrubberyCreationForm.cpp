@@ -1,14 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
 // Constructeur / destructeurs
-ShrubberyCreationForm::ShrubberyCreationForm(void)
+ShrubberyCreationForm::ShrubberyCreationForm(void):
+AForm("default_name", SHRUB_MIN_GRADE_TO_SIGN, SHRUB_MIN_GRADE_TO_EXEC, "default_target")
 {
 	std::cout << "Constructor Default ShrubberyCreationForm called"<< std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, int min_grade_to_sign, 
-int min_grade_to_exec, std::string target): 
-AForm(name, min_grade_to_sign, min_grade_to_exec, target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name, std::string target): 
+AForm(name, SHRUB_MIN_GRADE_TO_SIGN, SHRUB_MIN_GRADE_TO_EXEC, target)
 {
 	std::cout << "Constructor name/grade ShrubberyCreationForm called"<< std::endl;
 }
@@ -27,12 +27,46 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& src)
 {
 	std::cout << "Operator= ShrubberyCreationForm called" << std::endl;
-	// faire copie
+	this->set_form_signed(src.get_form_signed());
 	return (*this);
 }
 
+static void print_tree(std::ofstream &file)
+{
+file << " __________________________________________________________________________________________ " << std::endl;
+file << "|                                                                                          |" << std::endl;
+file << "|                                                                                          |" << std::endl;
+file << "|                 * *                           * *                           * *          |" << std::endl;
+file << "|           *    *  *                     *    *  *                     *    *  *          |" << std::endl;
+file << "|      *  *    *     *  *            *  *    *     *  *            *  *    *     *  *      |" << std::endl;
+file << "|     *     *    *  *    *          *     *    *  *    *          *     *    *  *    *     |" << std::endl;
+file << "| * *   *    *    *    *   *    * *   *    *    *    *   *    * *   *    *    *    *   *   |" << std::endl;
+file << "| *     *  *    * * .#  *   *   *     *  *    * * .#  *   *   *     *  *    * * .#  *   *  |" << std::endl;
+file << "| *   *     * #.  .# *   *      *   *     * #.  .# *   *      *   *     * #.  .# *   *     |" << std::endl;
+file << "|   *     #.  #: #  * *    *      *     #.  #: #  * *    *      *     #.  #: #  * *    *   |" << std::endl;
+file << "|  *   * * #. ##        *        *   * * #. ##        *        *   * * #. ##        *      |" << std::endl;
+file << "|    *       ###                   *       ###                   *       ###               |" << std::endl;
+file << "|              ##                            ##                            ##              |" << std::endl;
+file << "|              ##.                           ##.                           ##.             |" << std::endl;
+file << "|              .##:                          .##:                          .##:            |" << std::endl;
+file << "|              :###                          :###                          :###            |" << std::endl;
+file << "|              ;###                          ;###                          ;###            |" << std::endl;
+file << "|            ,####.                        ,####.                        ,####.            |" << std::endl;
+file << "|__________________________________________________________________________________________|" << std::endl;
+}
 // Fonctions
-//void		ShrubberyCreationForm::exec_form(void)
-//{
+void	ShrubberyCreationForm::execute_childform() const
+{
+	std::cout << "test" << std::endl;
+	std::ofstream file_out;
+	file_out.open((this->get_target() + "_shrubbery").c_str());
+	if (!file_out.is_open())
+	{
+		std::cout << "Error: file can't be open" << std::endl;
+		return;
+	}
+	file_out << "test" << std::endl;
+	print_tree(file_out);
+	file_out.close();
+}
 
-//}
