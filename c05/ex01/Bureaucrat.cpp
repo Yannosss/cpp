@@ -1,7 +1,8 @@
 #include "Bureaucrat.hpp"
 
 // Constructeur / destructeurs
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void):
+_name("no_name"), _grade(150)
 {
 	std::cout << "Constructor Default Bureaucrat called"<< std::endl;
 }
@@ -9,6 +10,7 @@ Bureaucrat::Bureaucrat(void)
 Bureaucrat::Bureaucrat(std::string name, int grade):
 _name(name)
 {
+	std::cout << "Constructor name/grade Bureaucrat called"<< std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
