@@ -9,6 +9,8 @@ SRCS += Form.cpp
 SRCS += ShrubberyCreationForm.cpp
 SRCS += RobotomyRequestForm.cpp
 SRCS += PresidentialPardonForm.cpp
+SRCS += Intern.cpp
+
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -17,7 +19,7 @@ HEADER += Form.hpp
 HEADER += ShrubberyCreationForm.hpp
 HEADER += RobotomyRequestForm.hpp
 HEADER += PresidentialPardonForm.hpp
-
+HEADER += Intern.hpp
 
 INCLUDES_DIR =
 

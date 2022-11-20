@@ -1,18 +1,18 @@
-#include "AForm.hpp"
+#include "Form.hpp"
 
 // Constructeur / destructeurs
-AForm::AForm(void):
+Form::Form(void):
 _name("no_name"), _form_signed(false), _min_grade_to_sign(150),
 _min_grade_to_exec(150)
 {
-	std::cout << "Constructor Default AForm called"<< std::endl;
+	std::cout << "Constructor Default Form called"<< std::endl;
 }
 
-AForm::AForm(std::string name, int min_grade_to_sign, int min_grade_to_exec, std::string target):
+Form::Form(std::string name, int min_grade_to_sign, int min_grade_to_exec, std::string target):
 _name(name), _form_signed(0), _min_grade_to_sign(min_grade_to_sign),
 _min_grade_to_exec(min_grade_to_exec), _target(target)
 {
-	std::cout << "Constructor name/min_grades AForm called"<< std::endl;
+	std::cout << "Constructor name/min_grades Form called"<< std::endl;
 	if (_min_grade_to_sign < 1 || _min_grade_to_exec < 1)
 		throw GradeTooHighException();
 	if (_min_grade_to_sign > 150 || _min_grade_to_exec > 150)
@@ -20,29 +20,29 @@ _min_grade_to_exec(min_grade_to_exec), _target(target)
 }
 
 
-AForm::AForm(const AForm& src):
+Form::Form(const Form& src):
 _name(src._name), _form_signed(src._form_signed), _min_grade_to_sign(src._min_grade_to_sign),
 _min_grade_to_exec(src._min_grade_to_exec)
 {
-	std::cout << "Constructor Bycopy AForm called" << std::endl;
+	std::cout << "Constructor Bycopy Form called" << std::endl;
 }
 
-AForm::~AForm(void)
+Form::~Form(void)
 {
-	std::cout << "Destructor AForm" << std::endl;
+	std::cout << "Destructor Form" << std::endl;
 }
 
-AForm& AForm::operator=(const AForm& src)
+Form& Form::operator=(const Form& src)
 {
-	std::cout << "Operator= AForm called" << std::endl;
+	std::cout << "Operator= Form called" << std::endl;
 	this->_form_signed = src._form_signed;
 	return (*this);
 }
 
 // Surcharge operateur <<
-std::ostream& operator<<(std::ostream& o, const AForm& rhs)
+std::ostream& operator<<(std::ostream& o, const Form& rhs)
 {
-	o << "AForm : " << rhs.get_name() << " - ";
+	o << "Form : " << rhs.get_name() << " - ";
 	o << "Signed : " << rhs.get_form_signed() << " - ";
 	o << "Min grade to sign : " << rhs.get_min_grade_to_sign() << " - ";
 	o << "Min grade to exec : " << rhs.get_min_grade_to_exec();
@@ -50,35 +50,35 @@ std::ostream& operator<<(std::ostream& o, const AForm& rhs)
 }
 
 // get / set
-std::string AForm::get_name(void) const
+std::string Form::get_name(void) const
 {
 	return (this->_name);
 }
-bool AForm::get_form_signed(void) const
+bool Form::get_form_signed(void) const
 {
 	return (this->_form_signed);
 }
-int AForm::get_min_grade_to_sign(void) const
+int Form::get_min_grade_to_sign(void) const
 {
 	return (this->_min_grade_to_sign);
 }
-int AForm::get_min_grade_to_exec(void) const
+int Form::get_min_grade_to_exec(void) const
 {
 	return (this->_min_grade_to_exec);
 }
-std::string AForm::get_target(void) const
+std::string Form::get_target(void) const
 {
 	return (this->_target);
 }
 
-void AForm::set_form_signed(bool new_state)
+void Form::set_form_signed(bool new_state)
 {
 	this->_form_signed = new_state;
 }
 
 
 // fonctions
-void	AForm::beSigned(Bureaucrat &bureaucrat)
+void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_min_grade_to_sign)
 		throw GradeTooLowException();
@@ -86,11 +86,11 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 }
 
 // Fonctions
-void	AForm::execute(Bureaucrat const & executor) const
+void	Form::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() > this->_min_grade_to_sign)
-		throw GradeTooLowException();
 	if (!get_form_signed())
 		throw FormNotSignedException();
+	if (executor.getGrade() > this->_min_grade_to_sign)
+		throw GradeTooLowException();
 	this->execute_childform();
 }
