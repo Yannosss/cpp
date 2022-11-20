@@ -32,6 +32,8 @@ Intern& Intern::operator=(const Intern& src)
 Form*	Intern::makeForm(std::string formular_name, std::string target)
 {
 	std::string form_type[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	//Form* _form_creation_fct_lst[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	
 	for (int i = 0; i < 3; i++)
 	{
 		if (formular_name == form_type[i])
@@ -45,19 +47,19 @@ Form*	Intern::makeForm(std::string formular_name, std::string target)
 
 }
 
-Form* _create_ShrubberyCreationForm(std::string name,std::string target)
+Form* Intern::_create_ShrubberyCreationForm(std::string name,std::string target)
 {
 	Form* new_form = new ShrubberyCreationForm(name, target);
 	return (new_form);
 }
 
-Form* _create_RobotomyRequestForm(std::string name,std::string target)
+Form* Intern::_create_RobotomyRequestForm(std::string name,std::string target)
 {
 	Form* new_form = new RobotomyRequestForm(name, target);
 	return (new_form);
 }
 
-Form* _Create_PresidentialPardonForm(std::string name,std::string target)
+Form* Intern::_Create_PresidentialPardonForm(std::string name,std::string target)
 {
 	Form* new_form = new PresidentialPardonForm(name, target);
 	return (new_form);
