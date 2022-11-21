@@ -23,14 +23,10 @@ class Intern
 
 		Form* makeForm(std::string formular_name, std::string target);
 		
-
 	private:		
-		Form* _create_ShrubberyCreationForm(std::string name,std::string target);
-		Form* _create_RobotomyRequestForm(std::string name,std::string target);
-		Form* _Create_PresidentialPardonForm(std::string name,std::string target);
-		Form* (Intern::*_form_creation_fct_lst[3])(std::string name,std::string target);
-
-
+		Form* _create_ShrubberyCreationForm(std::string target);
+		Form* _create_RobotomyRequestForm(std::string target);
+		Form* _Create_PresidentialPardonForm(std::string target);
 };
 
 #endif
