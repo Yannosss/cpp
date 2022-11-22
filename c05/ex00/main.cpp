@@ -64,9 +64,9 @@ int main (void)
 	Bureaucrat bureaucrat7("Tom", 42);
 	std::cerr << bureaucrat7 << std::endl;
 
-		std::cout << "\x1B[36m ### test copy et = << ###\x1B[37m" << std::endl;
+	std::cout << "\x1B[36m ### test copy et = << ###\x1B[37m" << std::endl;
 	Bureaucrat bureaucrat8("Tom", 42);
-	std::cerr << bureaucrat7 << std::endl;
+	std::cerr << bureaucrat8 << std::endl;
 	Bureaucrat bureaucrat9(bureaucrat8);
 	std::cerr << bureaucrat9 << std::endl;
 	Bureaucrat bureaucrat10("Bob", 24);;
