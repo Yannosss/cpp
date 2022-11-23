@@ -52,11 +52,6 @@ int main (void)
 	}
 	
 
-	
-	
-
-
-
 	std::cout << "\x1B[36m ### test Formular.beSigned() << ###\x1B[37m" << std::endl;
 	Bureaucrat b20("b20", 20);
 	Form f19("f19", 19, 15);

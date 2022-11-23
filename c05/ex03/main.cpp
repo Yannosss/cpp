@@ -61,7 +61,5 @@ int main (void)
 
 	return (0);
 
-	// ajout test autres formulaires
-
 }
 

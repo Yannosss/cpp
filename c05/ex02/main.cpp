@@ -7,7 +7,7 @@
 
 int main (void)
 {
-	std::cout << "\x1B[36m ### test ShrubberyCreationForm << ###\x1B[37m" << std::endl;
+	std::cout << "\x1B[36m ### test ShrubberyCreationForm ###\x1B[37m" << std::endl;
 	try
 	{
 		ShrubberyCreationForm f_shf1("form", "forest");
@@ -28,7 +28,7 @@ int main (void)
 		b146.executeForm(f_shf1);
 	}
 
-		std::cout << "\x1B[36m ### test RobotomyRequestForm << ###\x1B[37m" << std::endl;
+		std::cout << "\x1B[36m ### test RobotomyRequestForm ###\x1B[37m" << std::endl;
 	try
 	{
 		RobotomyRequestForm f_shf1("form", "42school");
@@ -50,7 +50,7 @@ int main (void)
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << "\x1B[36m ### test PresidentialPardonForm << ###\x1B[37m" << std::endl;
+	std::cout << "\x1B[36m ### test PresidentialPardonForm ###\x1B[37m" << std::endl;
 	try
 	{
 		PresidentialPardonForm f_shf1("form", "Tonton Xavier");
@@ -63,7 +63,7 @@ int main (void)
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << "\x1B[36m ### test Bureaucrat.executeForm() << ###\x1B[37m" << std::endl;
+	std::cout << "\x1B[36m ### test Bureaucrat.executeForm() ###\x1B[37m" << std::endl;
 	Bureaucrat b1("Tom", 1);
 	Bureaucrat b2("Toby", 150);
 
