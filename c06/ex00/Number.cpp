@@ -66,4 +66,16 @@ void	Number::set_double_value(double value)
 }
 
 // Fonctions
+void	Number::print()
+{
+	if(_char_non_displayable)
+		std::cout << "char: "<< "Non displayable" << std::endl;
+	else
+		std::cout << "char: '"<< this->_char_value << "'" << std::endl;
+
+	std::cout << "int: "<< this->_int_value << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << this->_float_value  << "f" << std::endl;
+	std::cout << "double: " << this->_double_value << std::endl;
+
+}
 

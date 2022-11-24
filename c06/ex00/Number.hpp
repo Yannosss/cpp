@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include <iomanip>
 
 class Number
 {
@@ -17,11 +18,12 @@ class Number
 		int		get_int_value();
 		float	get_float_value();
 		double	get_double_value();
-
 		void	set_char_value(char value);
 		void	set_int_value(int value);
 		void	set_float_value(float value);
 		void	set_double_value(double value);
+
+		void	print();
 
 	private:
 		std::string	_raw_nb;

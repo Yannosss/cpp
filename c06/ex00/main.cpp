@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 		return(1);
 	}
 	arg = argv[1];
-	if (arg.length() == 1 && std::isdigit(arg.at(0)) && std::isprint(arg.at(0)))
+	if (arg.length() == 1 && !std::isdigit(arg.at(0)) && std::isprint(arg.at(0)))
 	{
 		conv_from_char(&number, arg);
 		return(0);
@@ -54,6 +54,7 @@ int main(int argc, char **argv)
 		conv_from_int(&number, arg);
 		return(0);
 	}
+	std::cout << "-- CHECK 3" << std::endl;
 	// test si autre chose que 'chiffre', 'f', '.'
 	if (!is_digits_dot_f(arg_to_check))
 	{
@@ -68,6 +69,7 @@ int main(int argc, char **argv)
 		not_a_number_case();
 		return(0);
 	}
+
 	// test si plus d'une virgule
 	if (count(arg_to_check.begin(), arg_to_check.end(), '.') > 1)
 	{
