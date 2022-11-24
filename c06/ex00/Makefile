@@ -4,12 +4,15 @@ NAME = main
 
 # Sources
 SRCS += main.cpp
-SRCS += 
+SRCS += utils.cpp
+SRCS += conversion.cpp
+SRCS += Number.cpp
 
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += 
+HEADER += main.hpp
+HEADER += Number.hpp
 
 INCLUDES_DIR =
 

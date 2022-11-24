@@ -13,6 +13,16 @@ class Number
 		~Number(void);
 		Number& operator=(const Number& src);
 
+		char	get_char_value();
+		int		get_int_value();
+		float	get_float_value();
+		double	get_double_value();
+
+		void	set_char_value(char value);
+		void	set_int_value(int value);
+		void	set_float_value(float value);
+		void	set_double_value(double value);
+
 	private:
 		std::string	_raw_nb;
 		//bool		_is_nan;
@@ -25,7 +35,7 @@ class Number
 		char		_char_value;
 		int			_int_value;
 		float		_float_value;
-		double		_float_value;
+		double		_double_value;
 };
 
 std::ostream& operator<<(std::ostream& o, const Number& rhs);

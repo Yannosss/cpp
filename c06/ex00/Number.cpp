@@ -30,5 +30,40 @@ std::ostream& operator<<(std::ostream& o, const Number& rhs)
 	return (o);
 }
 
+// get set
+char	Number::get_char_value()
+{
+	return (this->_char_value);
+}
+int		Number::get_int_value()
+{
+	return (this->_int_value);
+}
+float	Number::get_float_value()
+{
+	return (this->_float_value);
+}
+double	Number::get_double_value()
+{
+	return (this->_double_value);
+}
+
+void	Number::set_char_value(char value)
+{
+	this-> _char_value = value;
+}
+void	Number::set_int_value(int value)
+{
+	this-> _int_value = value;
+}
+void	Number::set_float_value(float value)
+{
+	this-> _float_value = value;
+}
+void	Number::set_double_value(double value)
+{
+	this-> _double_value = value;
+}
+
 // Fonctions
 
