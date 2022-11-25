@@ -20,5 +20,7 @@ void	conv_from_int(Number* number, const std::string str);
 void	conv_from_float(Number* number, const std::string str);
 void	conv_from_double(Number* number, const std::string str);
 void	not_a_number_case();
+void	print_impossible();
+
 
 #endif

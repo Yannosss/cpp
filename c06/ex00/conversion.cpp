@@ -33,19 +33,15 @@ void	conv_from_int(Number* number, const std::string str)
 	if (long_conversion > INT_MAX || long_conversion < INT_MIN)
 	{
 		std::cout << "Warning: Conversion in integer not possible (overflow)" << std::endl;
+		print_impossible();
 		return;
 	}
-
 	int int_conversion = static_cast<int>(long_conversion);
 
 	// Fill char
 	char c = static_cast<char>(int_conversion);
-	if (std::isprint(c))
-	{
-		std::cout << "cjeck cahr:" << c << std::endl;
-
+	if (int_conversion > 0 && std::isprint(c))
 		number->set_char_value(c);
-	}
 	else
 		number->set_char_non_displayable(true);
 
@@ -60,6 +56,36 @@ void	conv_from_int(Number* number, const std::string str)
 	
 	// print
 	number->print();
+}
+
+void	conv_from_float(Number* number, const std::string str)
+{
+	std::cout << "APPEL conv from float, arg = " << str << std::endl;
+	// conversion
+	float float_conversion = std::atof(str.c_str());
+
+	// Fill char
+	char c = static_cast<char>(float_conversion);
+	if (float_conversion > 0 && std::isprint(c))
+		number->set_char_value(c);
+	else
+		number->set_char_non_displayable(true);
+
+	// Fill int
+	if (float_conversion > INT_MAX || float_conversion < INT_MIN)
+		number->set_int_non_displayable(true);
+	else
+		number->set_int_value(static_cast<int>(float_conversion));
+
+	// Fill float
+		number->set_float_value(float_conversion); //ajout check inf
+	pourchecknoncompilation
+	// Fill double
+	number->set_double_value(static_cast<double>(float_conversion));//ajout check inf
+
+	// print
+	number->print();
+
 
 }
 
@@ -108,11 +134,7 @@ void	conv_from_int(Number* number, const std::string str)
 
 }
 */
-void	conv_from_float(Number* number, const std::string str)
-{
-	std::cout << "APPEL conv from float, arg = " << str << std::endl;
 
-}
 void	conv_from_double(Number* number, const std::string str)
 {
 	std::cout << "APPEL conv from double, arg = " << str << std::endl;

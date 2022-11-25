@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 	if (arg_to_check.find('f') == arg_to_check.length() - 1)
 	{
 		//conv_from_float(&number, arg);
-		not_a_number_case();
+		conv_from_float(&number, arg);
 		return(0);
 	}
 	conv_from_double(&number, arg);
