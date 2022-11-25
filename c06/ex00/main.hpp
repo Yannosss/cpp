@@ -6,6 +6,10 @@
 #include <limits>
 #include <ctype.h>
 #include <algorithm>
+#include <sstream>
+#include <bits/stdc++.h>
+# include <math.h>
+
 #include "Number.hpp"
 
 bool is_digits(const std::string &str);

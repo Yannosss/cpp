@@ -5,6 +5,9 @@
 # include <string>
 # include <exception>
 # include <iomanip>
+# include <sstream>
+# include <bits/stdc++.h>
+# include <math.h>
 
 class Number
 {
@@ -13,6 +16,11 @@ class Number
 		Number(const Number& src);
 		~Number(void);
 		Number& operator=(const Number& src);
+
+		bool	get_char_non_displayable();
+		bool	get_int_non_displayable();
+		void	set_char_non_displayable(bool value);
+		void	set_int_non_displayable(bool value);
 
 		char	get_char_value();
 		int		get_int_value();
@@ -32,7 +40,7 @@ class Number
 		//int		_sign;
 
 		bool		_char_non_displayable;
-		bool		_int_non_displayanble;
+		bool		_int_non_displayable;
 
 		char		_char_value;
 		int			_int_value;
