@@ -64,6 +64,14 @@ void	conv_from_float(Number* number, const std::string str)
 	// conversion
 	float float_conversion = std::atof(str.c_str());
 
+	//check overflow
+	if (isinf(float_conversion))
+	{
+		std::cout << "Warning: First conversion in float not possible (overflow)" << std::endl;
+		print_impossible();
+		return ;
+	}
+
 	// Fill char
 	char c = static_cast<char>(float_conversion);
 	if (float_conversion > 0 && std::isprint(c))
@@ -73,20 +81,67 @@ void	conv_from_float(Number* number, const std::string str)
 
 	// Fill int
 	if (float_conversion > INT_MAX || float_conversion < INT_MIN)
+	{
+		std::cout << "Warning: overflow on int" << std::endl;
 		number->set_int_non_displayable(true);
+	}
 	else
 		number->set_int_value(static_cast<int>(float_conversion));
 
 	// Fill float
-		number->set_float_value(float_conversion); //ajout check inf
-	pourchecknoncompilation
+	number->set_float_value(float_conversion);
+
 	// Fill double
-	number->set_double_value(static_cast<double>(float_conversion));//ajout check inf
+	number->set_double_value(static_cast<double>(float_conversion));
 
 	// print
 	number->print();
+}
 
+void	conv_from_double(Number* number, const std::string str)
+{
+	std::cout << "APPEL conv from double, arg = " << str << std::endl;
+	// conversion
+	double double_conversion = std::strtod(str.c_str(), NULL);
+	//check overflow
+	if (isinf(double_conversion))
+	{
+		std::cout << "Warning: First conversion in double not possible (overflow)" << std::endl;
+		print_impossible();
+		return ;
+	}
 
+	// Fill char
+	char c = static_cast<char>(double_conversion);
+	if (double_conversion > 0 && std::isprint(c))
+		number->set_char_value(c);
+	else
+		number->set_char_non_displayable(true);
+
+	// Fill int
+	if (double_conversion > INT_MAX || double_conversion < INT_MIN)
+	{
+		std::cout << "Warning: overflow on int" << std::endl;
+		number->set_int_non_displayable(true);
+	}
+	else
+		number->set_int_value(static_cast<int>(double_conversion));
+
+	// Fill float
+	float float_conversion = std::atof(str.c_str());
+	if (isinf(float_conversion))
+	{
+		std::cout << "Warning: overflow on float" << std::endl;
+		number->set_float_non_displayable(true);
+	}
+	else
+		number->set_int_value(static_cast<int>(double_conversion));
+
+	// Fill double
+	number->set_double_value(double_conversion);
+
+	// print
+	number->print();
 }
 
 /* conversion initial de int
@@ -135,16 +190,4 @@ void	conv_from_float(Number* number, const std::string str)
 }
 */
 
-void	conv_from_double(Number* number, const std::string str)
-{
-	std::cout << "APPEL conv from double, arg = " << str << std::endl;
 
-}
-
-void	not_a_number_case()
-{
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: nanf" << std::endl;
-	std::cout << "double: nan" << std::endl;
-}

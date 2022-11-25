@@ -19,13 +19,15 @@ class Number
 
 		bool	get_char_non_displayable();
 		bool	get_int_non_displayable();
-		void	set_char_non_displayable(bool value);
-		void	set_int_non_displayable(bool value);
-
+		bool	get_float_non_displayable();
 		char	get_char_value();
 		int		get_int_value();
 		float	get_float_value();
 		double	get_double_value();
+
+		void	set_char_non_displayable(bool value);
+		void	set_int_non_displayable(bool value);
+		void	set_float_non_displayable(bool value);
 		void	set_char_value(char value);
 		void	set_int_value(int value);
 		void	set_float_value(float value);
@@ -35,19 +37,15 @@ class Number
 
 	private:
 		std::string	_raw_nb;
-		//bool		_is_nan;
-		//bool		_is_inf;
-		//int		_sign;
 
 		bool		_char_non_displayable;
 		bool		_int_non_displayable;
+		bool		_float_non_displayable;
 
 		char		_char_value;
 		int			_int_value;
 		float		_float_value;
 		double		_double_value;
 };
-
-std::ostream& operator<<(std::ostream& o, const Number& rhs);
 
 #endif

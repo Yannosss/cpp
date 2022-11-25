@@ -19,8 +19,10 @@ void	conv_from_char(Number* number, const std::string str);
 void	conv_from_int(Number* number, const std::string str);
 void	conv_from_float(Number* number, const std::string str);
 void	conv_from_double(Number* number, const std::string str);
-void	not_a_number_case();
+void	print_not_a_number();
 void	print_impossible();
+void	print_positive_inf();
+void	print_negative_inf();
 
 
 #endif
