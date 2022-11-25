@@ -24,11 +24,12 @@ Number::~Number(void)
 Number& Number::operator=(const Number& src)
 {
 	this->_char_non_displayable = src._char_non_displayable;
-	_int_non_displayable = src._int_non_displayable;
-	_char_value = src._char_value;
-	_int_value = src._int_value;
-	_float_value = src._float_value;
-	_double_value = src._double_value;
+	this->_int_non_displayable = src._int_non_displayable;
+	this->_float_non_displayable = src._int_non_displayable;
+	this->_char_value = src._char_value;
+	this->_int_value = src._int_value;
+	this->_float_value = src._float_value;
+	this->_double_value = src._double_value;
 	return (*this);
 }
 
