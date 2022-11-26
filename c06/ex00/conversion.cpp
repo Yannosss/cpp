@@ -2,7 +2,7 @@
 
 void	conv_from_char(Number* number, std::string str)
 {
-	std::cout << "APPEL conv from char, arg = " << str << std::endl;
+	//std::cout << "APPEL conv from char, arg = " << str << std::endl;
 	// conversion
 	char c = str[0];
 
@@ -24,7 +24,7 @@ void	conv_from_char(Number* number, std::string str)
 
 void	conv_from_int(Number* number, const std::string str)
 {
-	std::cout << "APPEL conv from int, arg = " << str << std::endl;
+	//std::cout << "APPEL conv from int, arg = " << str << std::endl;
 	// conversion
 	long long_conversion;
 	std::stringstream ss; 
@@ -60,7 +60,7 @@ void	conv_from_int(Number* number, const std::string str)
 
 void	conv_from_float(Number* number, const std::string str)
 {
-	std::cout << "APPEL conv from float, arg = " << str << std::endl;
+	//std::cout << "APPEL conv from float, arg = " << str << std::endl;
 	// conversion
 	float float_conversion = std::atof(str.c_str());
 
@@ -80,7 +80,7 @@ void	conv_from_float(Number* number, const std::string str)
 		number->set_char_non_displayable(true);
 
 	// Fill int
-	if (float_conversion > INT_MAX || float_conversion < INT_MIN)
+	if (float_conversion > static_cast<float>(INT_MAX) || float_conversion < static_cast<float>(INT_MIN))
 	{
 		std::cout << "Warning: overflow on int" << std::endl;
 		number->set_int_non_displayable(true);
@@ -100,7 +100,7 @@ void	conv_from_float(Number* number, const std::string str)
 
 void	conv_from_double(Number* number, const std::string str)
 {
-	std::cout << "APPEL conv from double, arg = " << str << std::endl;
+	//std::cout << "APPEL conv from double, arg = " << str << std::endl;
 	// conversion
 	double double_conversion = std::strtod(str.c_str(), NULL);
 	//check overflow
@@ -119,7 +119,7 @@ void	conv_from_double(Number* number, const std::string str)
 		number->set_char_non_displayable(true);
 
 	// Fill int
-	if (double_conversion > INT_MAX || double_conversion < INT_MIN)
+	if (double_conversion > static_cast<double>(INT_MAX) || double_conversion < static_cast<double>(INT_MIN))
 	{
 		std::cout << "Warning: overflow on int" << std::endl;
 		number->set_int_non_displayable(true);
@@ -135,7 +135,7 @@ void	conv_from_double(Number* number, const std::string str)
 		number->set_float_non_displayable(true);
 	}
 	else
-		number->set_int_value(static_cast<int>(double_conversion));
+		number->set_float_value(static_cast<float>(double_conversion));
 
 	// Fill double
 	number->set_double_value(double_conversion);
@@ -143,51 +143,5 @@ void	conv_from_double(Number* number, const std::string str)
 	// print
 	number->print();
 }
-
-/* conversion initial de int
-{
-	std::cout << "APPEL conv from int, arg = " << str << std::endl;
-
-
-	// Fill char
-	//number->set_char_value(c);
-
-	// Fill int
-	long long_conversion;
-	std::stringstream ss; 
-	ss << str;
-	ss >> long_conversion;
-	if (long_conversion > INT_MAX || long_conversion < INT_MIN)
-	{
-		number->set_int_non_displayable(true);
-		number->set_int_value(0);
-	}
-	else
-	{
-		number->set_int_value(long_conversion);
-	}
-
-	// Fill float
-	float float_conversion = std::atof(str.c_str());
-	if (isinf(float_conversion))
-	{
-
-	}
-	else
-	{
-		number->set_float_value(std::atof(str.c_str()));
-	}
-	//number->set_float_value(static_cast<float>(c));
-	
-	// Fill double
-	number->set_double_value(std::atof(str.c_str()));
-
-	//number->set_double_value(static_cast<double>(c));
-
-	// print
-	number->print();
-
-}
-*/
 
 
