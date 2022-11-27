@@ -3,7 +3,8 @@
 NAME = main
 
 # Sources
-SRCS += main.cpp
+#SRCS += mainperso.cpp
+SRCS += mainsujet.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -16,7 +17,7 @@ LIB_INCLUDE =
 # Compilateurs
 CC = c++
 CFLAGS = -g3 -Wall -Wextra -std=c++98
-#CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 

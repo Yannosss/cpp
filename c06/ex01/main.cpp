@@ -21,7 +21,7 @@ int main(void)
 {
 	Data my_data;
 	my_data.variable_1 = 42;
-	my_data.variable_2 = 1.0;
+	my_data.variable_2 = 1.2;
 
 	Data* ptr_my_data = &my_data;
 

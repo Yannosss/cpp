@@ -1,17 +1,25 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+# include <cstdlib> // pour main sujet
+
 template <typename T>
 class Array
 {
 	public:
-		Array()
+		Array():
+		_element_size(0)
 		{
 			this->_element = new T();
 		}
-		Array(unsigned int size)
+		Array(unsigned int size):
+		_element_size(size)
 		{
 			this->_element = new T[size];
+		}
+		~Array()
+		{
+			delete [] this->_element;
 		}
 		Array(const Array& src)
 		{
@@ -19,26 +27,46 @@ class Array
 		}
 		Array& operator=(const Array& src)
 		{
-			size_t new_size = sizeof(src.get_element()) / sizeof(T);
-			this->_element = new T[new_size];
-			for (int i = 0; i < new_size; i++)
+			this->_element_size = src.size();
+			this->_element = new T[this->_element_size];
+			for (size_t i = 0; i < this->_element_size; i++)
 			{
 				this->_element[i] = src.get_element()[i];
 			}
-
+			return (*this);
 		}
-
-		T* get_element()
+		size_t	size() const
+		{
+			return(this->_element_size);
+		}
+		T* get_element() const
 		{
 			return(this->_element);
 		}
+		T& operator[](size_t i) const
+		{
+
+			if (i < 0 || i >= this->size())
+				throw InvalidIndexException();
+			return (this->_element[i]);
+		}
+		class InvalidIndexException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("Index is not valid");
+				}
+		};
 		// ajout recup par [] (surcharge operateur)
 		// et exception si on out of range
 
 		// ajout fonction size
+		// ajout free dans destructeur
 
 	private:
-		T _element[];
+		size_t	_element_size;
+		T*		_element;
 };
 
 #endif
