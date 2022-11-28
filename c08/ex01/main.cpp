@@ -14,13 +14,27 @@ int main()
 	std::cout << sp.longestSpan() << std::endl;
 
 	// tests perso
-	//Span sp2 = sp;
+	// visu vector ini
+	std::cout << "vector ini" << std::endl;
+	for(std::vector<int>::iterator it = (sp.get_nb_list()).begin(); it != (sp.get_nb_list()).end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
 
-	//for(std::vector<int>::iterator it = sp2.begin(); it != sp2.end(); it++)
-	//{
-	//	std::cout << *it << std::cout;
-	//}
-
+	// check deep copy
+	std::cout << "vector copy + modification first number" << std::endl;
+	Span sp2 = sp;
+	*(sp2.get_nb_list().begin()) = 2;
+	std::cout << "--- initial list" << std::endl;
+	for(std::vector<int>::iterator it = (sp.get_nb_list()).begin(); it != (sp.get_nb_list()).end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	std::cout << "--- modified list" << std::endl;
+	for(std::vector<int>::iterator it = sp2.get_nb_list().begin(); it != sp2.get_nb_list().end(); it++)
+	{
+		std::cout << *it << std::endl;
+	}
 	// tester > 10000 nb
 
 }

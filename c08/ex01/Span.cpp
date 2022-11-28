@@ -27,6 +27,11 @@ Span& Span::operator=(const Span& src)
 	return (*this);
 }
 
+//get
+std::vector<int>& Span::get_nb_list()
+{
+	return (this->_nb_list);
+}
 
 // functions
 void	Span::addNumber(int to_add)

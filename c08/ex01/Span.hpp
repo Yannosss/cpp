@@ -16,6 +16,8 @@ class Span
 		~Span(void);
 		Span& operator=(const Span& src);
 
+		std::vector<int>& get_nb_list();
+
 		void	addNumber(int to_add);
 		long		shortestSpan();
 		long		longestSpan();
