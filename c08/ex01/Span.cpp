@@ -24,6 +24,7 @@ Span& Span::operator=(const Span& src)
 {
 	this->_max_number_N = src._max_number_N;
 	this->_nb_list = src._nb_list;
+	return (*this);
 }
 
 
@@ -45,6 +46,7 @@ long		Span::shortestSpan()
 	{
 		if (it != copy.begin())
 		{
+			//https://cplusplus.com/reference/cstdlib/abs/
 			if (abs(*previous_it - *it) < shortest_span)
 				shortest_span = abs(*previous_it - *it);
 		}
