@@ -3,12 +3,12 @@
 NAME = main
 
 # Sources
-#SRCS += mainperso.cpp
-SRCS += mainsujet.cpp
+SRCS += main.cpp
+SRCS += Span.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += Array.hpp
+HEADER += Span.hpp
 
 INCLUDES_DIR =
 
@@ -16,8 +16,8 @@ LIB_INCLUDE =
 
 # Compilateurs
 CC = c++
-#CFLAGS = -g3 -Wall -Wextra -std=c++98
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g3 -Wall -Wextra -std=c++98
+#CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 ##########   RULES   ##########
 
