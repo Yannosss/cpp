@@ -18,7 +18,6 @@ int main()
 	std::cout << "vector ini" << std::endl;
 	sp.print_nb_list();
 
-
 	// check deep copy
 	std::cout << "vector copy + modification first number" << std::endl;
 	Span sp2 = sp;
@@ -28,8 +27,6 @@ int main()
 
 	std::cout << "--- modified list" << std::endl;
 	sp2.print_nb_list();
-
-
 
 	// test ajout par range
 	std::cout << "add range" << std::endl;
@@ -144,9 +141,4 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 	
-
-
-
-
-
 }
