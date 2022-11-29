@@ -43,17 +43,26 @@ void	Span::addNumber(int to_add)
 
 long		Span::shortestSpan()
 {
+	if (this->_nb_list.size() < 2)
+		throw NotEnoughElementToFindDistanceException();
+
+	long delta;
 	std::vector<int> copy = this->_nb_list;
 	std::sort(copy.begin(), copy.end());
-	long shortest_span = abs(copy.begin() - copy.end());
+	long shortest_span = copy.begin() - copy.end();
+	if (shortest_span < 0)
+		shortest_span = -shortest_span;
 	std::vector<int>::iterator previous_it;
 	for(std::vector<int>::iterator it = copy.begin(); it != copy.end(); it++)
 	{
 		if (it != copy.begin())
 		{
 			//https://cplusplus.com/reference/cstdlib/abs/
-			if (abs(*previous_it - *it) < shortest_span)
-				shortest_span = abs(*previous_it - *it);
+			delta = *previous_it - *it;
+			if (delta < 0)
+				delta = -delta;
+			if (delta < shortest_span)
+				shortest_span = delta;
 		}
 		previous_it = it;
 	}
@@ -62,7 +71,30 @@ long		Span::shortestSpan()
 
 long		Span::longestSpan()
 {
+	if (this->_nb_list.size() < 2)
+		throw NotEnoughElementToFindDistanceException();
+		
 	int min = *std::min_element(this->_nb_list.begin(), this->_nb_list.end());
 	int max = *std::max_element(this->_nb_list.begin(), this->_nb_list.end());
 	return (max - min);
+}
+
+void	Span::add_range(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end)
+{
+	for (std::vector<int>::iterator it = it_start; it < it_end; it++)
+	{
+		this->addNumber(*it);
+	}
+}
+
+void	Span::print_nb_list()
+{
+	std::cout << "- nb_list -" << std::endl;
+
+	for(std::vector<int>::iterator it = (this->_nb_list).begin(); it != (this->_nb_list).end(); it++)
+	{
+		std::cout << *it << " - ";
+	}
+	std::cout << std::endl;
+
 }

@@ -19,8 +19,11 @@ class Span
 		std::vector<int>& get_nb_list();
 
 		void	addNumber(int to_add);
-		long		shortestSpan();
-		long		longestSpan();
+		long	shortestSpan();
+		long	longestSpan();
+		void	add_range(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end);
+		void	print_nb_list();
+
 
 		class TooMuchNumbersException: public std::exception
 		{
@@ -28,6 +31,14 @@ class Span
 				virtual const char * what() const throw()
 				{
 					return ("Too much number in Span");
+				}
+		};
+		class NotEnoughElementToFindDistanceException: public std::exception
+		{
+			public:
+				virtual const char * what() const throw()
+				{
+					return ("There is not enough elements to calculate a distance");
 				}
 		};
 
