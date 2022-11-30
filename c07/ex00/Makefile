@@ -7,9 +7,7 @@ SRCS += main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
-HEADER += swap.hpp
-HEADER += min.hpp
-HEADER += max.hpp
+HEADER += whatever.hpp
 
 INCLUDES_DIR =
 
