@@ -2,27 +2,42 @@
 #include <string>
 #include "iter.hpp"
 
-int main()
+// main sujet
+class Awesome
 {
-	size_t size = 4;
-	int tab_int[] = {0, 1, 2, 3};
-	std::string tab_str[] = {"str1", "str2", "str3", "str4"};
+  public:
+    Awesome( void ) : _n( 42 ) { return; }
+    int get( void ) const { return this->_n; }
+  private:
+    int _n;
+};
 
-	// test print / int_tab
-	iter(tab_int, size, &print_param);
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-	// test print / string_tab
-	iter(tab_str, size, &print_param);
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
-	// test sum / int_tab
-	iter(tab_int, size, &sum);
+int main() {
+  int tab[] = { 0, 1, 2, 3, 4 };  // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
+  Awesome tab2[5];
 
-	// test sum / string_tab
-	iter(tab_str, size, &sum);
+  iter( tab, 5, print<int> );
+  iter( tab2, 5, print<Awesome> );
 
-	// test print / int_tab
-	iter(tab_int, size, &print_param);
-
-	// test print / string_tab
-	iter(tab_str, size, &print_param);
+  return 0;
 }
+
+// main perso
+//int main()
+//{
+//	size_t size = 4;
+//	int tab_int[] = {0, 1, 2, 3};
+//	std::string tab_str[] = {"str1", "str2", "str3", "str4"};
+
+//	// test print / int_tab
+//	iter(tab_int, size, &print_param);
+
+//	// test print / string_tab
+//	iter(tab_str, size, &print_param);
+
+//}

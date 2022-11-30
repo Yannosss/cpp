@@ -10,13 +10,7 @@ void	print_param(T& param)
 }
 
 template <typename T>
-void	sum(T& param)
-{
-	param = param + param;
-}
-
-template <typename T>
-void iter(T* tab, size_t size, void(*function)(T& func_param))
+void iter(T* tab, size_t size, void(*function)(const T& func_param))
 {
 	if (!tab || size <= 0)
 		return ;

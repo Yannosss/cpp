@@ -3,8 +3,7 @@
 NAME = main
 
 # Sources
-#SRCS += mainperso.cpp
-SRCS += mainsujet.cpp
+SRCS += main.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
