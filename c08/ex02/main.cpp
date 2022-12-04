@@ -53,7 +53,25 @@ int main()
 			++it;
 		}
 		std::list<int> s(mstack);
+
+		// ajout
+		std::cout << "new" << std::endl;
+		std::list<int> mstack2 = mstack;
+		mstack2.pop_back();
+		mstack2.pop_back();
+		it = mstack.begin();
+		ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{
+			std::cout << *it << std::endl;
+			++it;
+		}
+
 	}
+
+
 	return 0;
 }
 

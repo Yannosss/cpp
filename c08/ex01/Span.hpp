@@ -19,9 +19,9 @@ class Span
 		std::vector<int>& get_nb_list();
 
 		void	addNumber(int to_add);
+		void	addNumber(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end);
 		long	shortestSpan();
 		long	longestSpan();
-		void	add_range(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end);
 		void	print_nb_list();
 
 

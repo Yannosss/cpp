@@ -41,6 +41,14 @@ void	Span::addNumber(int to_add)
 	_nb_list.push_back(to_add);
 }
 
+void	Span::addNumber(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end)
+{
+	for (std::vector<int>::iterator it = it_start; it < it_end; it++)
+	{
+		this->addNumber(*it);
+	}
+}
+
 long		Span::shortestSpan()
 {
 	if (this->_nb_list.size() < 2)
@@ -57,7 +65,6 @@ long		Span::shortestSpan()
 	{
 		if (it != copy.begin())
 		{
-			//https://cplusplus.com/reference/cstdlib/abs/
 			delta = *previous_it - *it;
 			if (delta < 0)
 				delta = -delta;
@@ -77,14 +84,6 @@ long		Span::longestSpan()
 	int min = *std::min_element(this->_nb_list.begin(), this->_nb_list.end());
 	int max = *std::max_element(this->_nb_list.begin(), this->_nb_list.end());
 	return (max - min);
-}
-
-void	Span::add_range(std::vector<int>::iterator it_start, std::vector<int>::iterator it_end)
-{
-	for (std::vector<int>::iterator it = it_start; it < it_end; it++)
-	{
-		this->addNumber(*it);
-	}
 }
 
 void	Span::print_nb_list()
